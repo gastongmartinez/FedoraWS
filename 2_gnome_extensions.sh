@@ -83,5 +83,5 @@ rm -rf gnome-shell-extensions
 # rm -rf dash-to-panel
 
 # No overview
-git clone https://github.com/fthx/no-overview.git
-mv ./no-overview ~/.local/share/gnome-shell/extensions/no-overview@fthx
+# git clone https://github.com/fthx/no-overview.git
+# mv ./no-overview ~/.local/share/gnome-shell/extensions/no-overview@fthx
