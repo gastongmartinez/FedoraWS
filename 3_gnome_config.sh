@@ -15,6 +15,28 @@ then
     exit 2
 fi
 
+############################################# Tema WhiteSur #################################################################################
+git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
+cd WhiteSur-gtk-theme || return
+./install.sh -c dark -c light -i fedora -N glassy
+./tweaks.sh -f
+sudo ./tweaks.sh -g -b "/usr/share/backgrounds/wallpapers/Landscapes/landscapes 01.jpg"
+cd ..
+
+git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git
+cd WhiteSur-icon-theme || return
+./install.sh -t grey
+cd ..
+
+git clone https://github.com/vinceliuice/WhiteSur-cursors.git
+cd WhiteSur-cursors || return
+./install.sh
+cd ..
+
+rm -rf WhiteSur-gtk-theme
+rm -rf WhiteSur-icon-theme
+rm -rf WhiteSur-cursors
+#############################################################################################################################################
 
 ############################################## Extensiones ##################################################################################
 # User themes
@@ -61,6 +83,14 @@ dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.
 # No overview
 dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.org', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'quake-mode@repsac-by.github.com', 'floatingDock@sun.wxg@gmail.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'sensory-perception@HarlemSquirrel.github.io', 'systemd-manager@hardpixel.eu', 'tiling-assistant@leleat-on-github', 'tweaks-system-menu@extensions.gnome-shell.fifi.org', 'blur-my-shell@aunetx', 'no-overview@fthx']"
 
+# Pop Shell
+dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.org', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'quake-mode@repsac-by.github.com', 'floatingDock@sun.wxg@gmail.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'sensory-perception@HarlemSquirrel.github.io', 'systemd-manager@hardpixel.eu', 'tiling-assistant@leleat-on-github', 'tweaks-system-menu@extensions.gnome-shell.fifi.org', 'blur-my-shell@aunetx', 'no-overview@fthx', 'pop-shell@system76.com']"
+dconf write /org/gnome/shell/extensions/pop-shell/tile-by-default true
+dconf write /org/gnome/shell/extensions/pop-shell/gap-inner 'uint32 1'
+dconf write /org/gnome/shell/extensions/pop-shell/gap-outer 'uint32 1'
+dconf write /org/gnome/shell/extensions/pop-shell/hint-color-rgba "'rgb(0,134,26)'"
+dconf write /org/gnome/shell/extensions/pop-shell/active-hint true
+
 # Dash to panel
 # dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.org', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'quake-mode@repsac-by.github.com', 'floatingDock@sun.wxg@gmail.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'sensory-perception@HarlemSquirrel.github.io', 'systemd-manager@hardpixel.eu', 'tiling-assistant@leleat-on-github', 'tweaks-system-menu@extensions.gnome-shell.fifi.org', 'blur-my-shell@aunetx', 'no-overview@fthx', 'dash-to-panel@jderose9.github.com']"
 # dconf write /org/gnome/shell/extensions/dash-to-panel/available-monitors "[0]"
@@ -70,14 +100,6 @@ dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.
 # dconf write /org/gnome/shell/extensions/dash-to-panel/panel-sizes '{"0":30}'
 # dconf write /org/gnome/shell/extensions/dash-to-panel/panel-element-positions "'{"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'"
 # dconf write /org/gnome/shell/extensions/dash-to-panel/appicon-margin 1
-
-# Pop Shell
-dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.org', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'quake-mode@repsac-by.github.com', 'floatingDock@sun.wxg@gmail.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'sensory-perception@HarlemSquirrel.github.io', 'systemd-manager@hardpixel.eu', 'tiling-assistant@leleat-on-github', 'tweaks-system-menu@extensions.gnome-shell.fifi.org', 'blur-my-shell@aunetx', 'no-overview@fthx', 'dash-to-panel@jderose9.github.com', 'pop-shell@system76.com']"
-dconf write /org/gnome/shell/extensions/pop-shell/tile-by-default true
-dconf write /org/gnome/shell/extensions/pop-shell/gap-inner 'uint32 1'
-dconf write /org/gnome/shell/extensions/pop-shell/gap-outer 'uint32 1'
-dconf write /org/gnome/shell/extensions/pop-shell/hint-color-rgba "'rgb(0,134,26)'"
-dconf write /org/gnome/shell/extensions/pop-shell/active-hint true
 #############################################################################################################################################
 # Teclado
 #dconf write /org/gnome/desktop/input-sources/sources "[('xkb', 'es+winkeys')]"
@@ -119,7 +141,7 @@ dconf write /org/gnome/shell/disable-user-extensions false
 if [ ! -d ~/.config/autostart ]; then
     mkdir -p ~/.config/autostart
 fi
-cp /usr/share/applications/plank.desktop ~/.config/autostart/
+# cp /usr/share/applications/plank.desktop ~/.config/autostart/
 cp /usr/share/applications/ulauncher.desktop ~/.config/autostart/
 
 # Tema Ulauncher
