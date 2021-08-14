@@ -12,6 +12,19 @@ wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
 chmod +x Anaconda3-2021.05-Linux-x86_64.sh
 ./Anaconda3-2021.05-Linux-x86_64.sh
 
+# Jetbrains
+if [ ! -d ~/Apps ]; then
+    mkdir ~/Apps
+fi
+cd ~/Apps || return
+wget https://download.jetbrains.com/python/pycharm-community-2021.2.tar.gz
+wget https://download.jetbrains.com/idea/ideaIC-2021.2.tar.gz
+tar -xzf pycharm-community-2021.2.tar.gz
+tar -xzf ideaIC-2021.2.tar.gz
+rm pycharm-community-2021.2.tar.gz
+rm ideaIC-2021.2.tar.gz
+cd ~ || return
+
 # Bash
 git clone --recursive https://github.com/andresgongora/synth-shell.git
 chmod +x synth-shell/setup.sh
