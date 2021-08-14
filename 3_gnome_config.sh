@@ -85,11 +85,18 @@ dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.
 
 # Pop Shell
 dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.org', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'quake-mode@repsac-by.github.com', 'floatingDock@sun.wxg@gmail.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'sensory-perception@HarlemSquirrel.github.io', 'systemd-manager@hardpixel.eu', 'tiling-assistant@leleat-on-github', 'tweaks-system-menu@extensions.gnome-shell.fifi.org', 'blur-my-shell@aunetx', 'no-overview@fthx', 'pop-shell@system76.com']"
-dconf write /org/gnome/shell/extensions/pop-shell/tile-by-default true
+dconf write /org/gnome/shell/extensions/pop-shell/tile-by-default false
 dconf write /org/gnome/shell/extensions/pop-shell/gap-inner 'uint32 1'
 dconf write /org/gnome/shell/extensions/pop-shell/gap-outer 'uint32 1'
 dconf write /org/gnome/shell/extensions/pop-shell/hint-color-rgba "'rgb(0,134,26)'"
-dconf write /org/gnome/shell/extensions/pop-shell/active-hint true
+dconf write /org/gnome/shell/extensions/pop-shell/active-hint false
+
+# Dash to dock
+dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.org', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'quake-mode@repsac-by.github.com', 'floatingDock@sun.wxg@gmail.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'sensory-perception@HarlemSquirrel.github.io', 'systemd-manager@hardpixel.eu', 'tiling-assistant@leleat-on-github', 'tweaks-system-menu@extensions.gnome-shell.fifi.org', 'blur-my-shell@aunetx', 'no-overview@fthx', 'pop-shell@system76.com', 'dash-to-dock@micxgx.gmail.com']"
+dconf write /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size 32
+dconf write /org/gnome/shell/extensions/dash-to-dock/show-apps-at-top true
+dconf write /org/gnome/shell/extensions/dash-to-dock/apply-custom-theme true
+
 
 # Dash to panel
 # dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.org', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'quake-mode@repsac-by.github.com', 'floatingDock@sun.wxg@gmail.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'sensory-perception@HarlemSquirrel.github.io', 'systemd-manager@hardpixel.eu', 'tiling-assistant@leleat-on-github', 'tweaks-system-menu@extensions.gnome-shell.fifi.org', 'blur-my-shell@aunetx', 'no-overview@fthx', 'dash-to-panel@jderose9.github.com']"
@@ -124,7 +131,10 @@ dconf write /org/gnome/desktop/interface/monospace-font-name "'Monospace 10'"
 dconf write /org/gnome/desktop/wm/preferences/titlebar-font "'Noto Sans CJK HK Bold 11'"
 
 # Aplicaciones favoritas
-dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Boxes.desktop', 'org.gnome.Evolution.desktop', 'libreoffice-calc.desktop', 'chromium-browser.desktop', 'firefox.desktop', 'brave-browser.desktop', 'org.qbittorrent.qBittorrent.desktop', 'code.desktop', 'emacs.desktop', 'codeblocks.desktop', 'Alacritty.desktop', 'clementine.desktop', 'vlc.desktop', 'org.gnome.tweaks.desktop']"
+dconf write /org/gnome/shell/favorite-apps "['io.elementary.files.desktop', 'io.elementary.terminal.desktop', 'org.gnome.Evolution.desktop', 'libreoffice-calc.desktop', 'code.desktop', 'chromium-browser.desktop', 'firefox.desktop', 'brave-browser.desktop', 'org.qbittorrent.qBittorrent.desktop', 'vlc.desktop', 'org.gnome.tweaks.desktop']"
+
+# Archivos
+dconf write /io/elementary/files/preferences/single-click false
 
 # Nautilus
 dconf write /org/gnome/nautilus/icon-view/default-zoom-level "'small'"

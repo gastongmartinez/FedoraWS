@@ -134,8 +134,11 @@ PAQUETES=(
     'ulauncher'
     'rsync'
     'dnfdragora'
+    'elementary-files'
+    'elementary-terminal'
 
     #### Multimedia ####
+    'elementary-music'
     'vlc'
     'python-vlc'
     'mpv'
