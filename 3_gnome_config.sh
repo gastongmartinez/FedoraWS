@@ -38,6 +38,18 @@ rm -rf WhiteSur-icon-theme
 rm -rf WhiteSur-cursors
 #############################################################################################################################################
 
+# Autostart Apps
+if [ ! -d ~/.config/autostart ]; then
+    mkdir -p ~/.config/autostart
+fi
+# cp /usr/share/applications/plank.desktop ~/.config/autostart/
+cp /usr/share/applications/ulauncher.desktop ~/.config/autostart/
+
+# Tema Ulauncher
+mkdir -p ~/.config/ulauncher/user-themes
+git clone https://github.com/Raayib/WhiteSur-Dark-ulauncher.git ~/.config/ulauncher/user-themes/WhiteSur-Dark-ulauncher
+
+
 ############################################## Extensiones ##################################################################################
 # User themes
 dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.org', 'user-theme@gnome-shell-extensions.gcampax.github.com']"
@@ -97,16 +109,6 @@ dconf write /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size 32
 dconf write /org/gnome/shell/extensions/dash-to-dock/show-apps-at-top true
 dconf write /org/gnome/shell/extensions/dash-to-dock/apply-custom-theme true
 
-
-# Dash to panel
-# dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.org', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'quake-mode@repsac-by.github.com', 'floatingDock@sun.wxg@gmail.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'sensory-perception@HarlemSquirrel.github.io', 'systemd-manager@hardpixel.eu', 'tiling-assistant@leleat-on-github', 'tweaks-system-menu@extensions.gnome-shell.fifi.org', 'blur-my-shell@aunetx', 'no-overview@fthx', 'dash-to-panel@jderose9.github.com']"
-# dconf write /org/gnome/shell/extensions/dash-to-panel/available-monitors "[0]"
-# dconf write /org/gnome/shell/extensions/arcmenu/available-placement "[true, true, false]"       # No hace nada
-# dconf write /org/gnome/shell/extensions/arcmenu/available-placement "[false, true, false]"      # No hace nada
-# dconf write /org/gnome/shell/extensions/dash-to-panel/panel-positions '{"0":"TOP"}'           # Ver no funciona
-# dconf write /org/gnome/shell/extensions/dash-to-panel/panel-sizes '{"0":30}'
-# dconf write /org/gnome/shell/extensions/dash-to-panel/panel-element-positions "'{"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'"
-# dconf write /org/gnome/shell/extensions/dash-to-panel/appicon-margin 1
 #############################################################################################################################################
 # Teclado
 #dconf write /org/gnome/desktop/input-sources/sources "[('xkb', 'es+winkeys')]"
@@ -147,50 +149,6 @@ dconf write /org/gnome/settings-daemon/plugins/power/sleep-inactive-battery-time
 dconf write /org/gnome/shell/disable-user-extensions false
 #############################################################################################################################################
 
-# Autostart Apps
-if [ ! -d ~/.config/autostart ]; then
-    mkdir -p ~/.config/autostart
-fi
-# cp /usr/share/applications/plank.desktop ~/.config/autostart/
-cp /usr/share/applications/ulauncher.desktop ~/.config/autostart/
+sleep 2
 
-# Tema Ulauncher
-mkdir -p ~/.config/ulauncher/user-themes
-git clone https://github.com/Raayib/WhiteSur-Dark-ulauncher.git ~/.config/ulauncher/user-themes/WhiteSur-Dark-ulauncher
-
-
-# Doom Emacs
-if [ -d ~/.emacs.d ]; then
-    rm -Rf ~/.emacs.d
-fi
-git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-~/.emacs.d/bin/doom install
-
-# Bash
-git clone --recursive https://github.com/andresgongora/synth-shell.git
-chmod +x synth-shell/setup.sh
-cd synth-shell || return
-./setup.sh
-cd ..
-rm -rf synth-shell
-
-# ZSH
-if [ ! -d ~/.local/share/zsh ]; then
-    mkdir ~/.local/share/zsh
-fi
-touch ~/.zshrc
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.local/share/zsh/powerlevel10k
-{
-    echo 'source ~/.local/share/zsh/powerlevel10k/powerlevel10k.zsh-theme'
-    echo 'source /usr/share/autojump/autojump.zsh'
-    echo 'source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh'
-    echo 'source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
-    echo -e '\n# History in cache directory:'
-    echo 'HISTSIZE=10000'
-    echo 'SAVEHIST=10000'
-    echo 'HISTFILE=~/.cache/zshhistory'
-    echo 'setopt appendhistory'
-    echo 'setopt sharehistory'
-    echo 'setopt incappendhistory'
-} >>~/.zshrc
-chsh -s /usr/bin/zsh
+reboot
