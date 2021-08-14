@@ -163,6 +163,8 @@ PAQUETES=(
     'clang'
     'meson'
     'codeblocks'
+    'python3-spyder'
+    'rstudio-desktop'
     'filezilla'
     'golang'
     'rust'
