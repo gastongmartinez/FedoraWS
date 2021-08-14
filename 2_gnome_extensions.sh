@@ -85,3 +85,8 @@ rm -rf gnome-shell-extensions
 # No overview
 # git clone https://github.com/fthx/no-overview.git
 # mv ./no-overview ~/.local/share/gnome-shell/extensions/no-overview@fthx
+
+
+sleep 2
+
+reboot
