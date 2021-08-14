@@ -8,13 +8,13 @@ then
     exit 1
 fi
 
-read -rp "Desea establecer el password para root? (S/N): " PR
+read -rp "Establecer el password para root? (S/N): " PR
 if [ "$PR" == 'S' ]; 
 then
     passwd root
 fi
 
-read -rp "Desea corregir la resolucion en VMWare Workstation? (S/N): " RES
+read -rp "Corregir la resolucion en VMWare Workstation? (S/N): " RES
 if [ "$RES" == 'S' ]; 
 then
     cp /etc/vmware-tools/tools.conf.example /etc/vmware-tools/tools.conf
@@ -22,7 +22,7 @@ then
     systemctl restart vmtoolsd.service
 fi
 
-read -rp "Desea establecer el nombre del equipo? (S/N): " HN
+read -rp "Establecer el nombre del equipo? (S/N): " HN
 if [ "$HN" == 'S' ]; 
 then
     read -rp "Ingrese el nombre del equipo: " EQUIPO
@@ -32,14 +32,19 @@ then
     fi
 fi
 
-dnf update -y
-
 systemctl enable sshd
 
 # Ajuste Swappiness
 su - root <<EOF
         echo -e "vm.swappiness=10\n" >> /etc/sysctl.d/90-sysctl.conf
 EOF
+
+# Configuracion DNF
+{
+    echo 'fastestmirror=1'
+    echo 'max_parallel_downloads=10'
+} >> /etc/dnf/dnf.conf
+dnf update -y
 
 # RPMFusion
 dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-"$(rpm -E %fedora)".noarch.rpm -y
@@ -65,6 +70,9 @@ PAQUETES=(
     'gnome-tweaks'
     'gnome-extensions-app'
     'gnome-shell-extension-user-theme'
+    'gnome-shell-extension-native-window-placement'
+    'gnome-shell-extension-user-theme'
+    'gnome-shell-extension-pop-shell'
     'file-roller-nautilus'
 
     #### WEB ####
@@ -80,6 +88,7 @@ PAQUETES=(
     'zsh'
     'zsh-autosuggestions'
     'zsh-syntax-highlighting'
+    'bash-completion'
     'dialog'
     'autojump'
     'autojump-fish'
@@ -116,13 +125,15 @@ PAQUETES=(
     'fzf'
     'the_silver_searcher'
     'libreoffice-langpack-es'
+    'aspell'
     'x2goserver'
     'plank'
     'dconf-editor'
     'ulauncher'
+    'rsync'
+    'dnfdragora'
 
     #### Multimedia ####
-    'clementine'
     'vlc'
     'python-vlc'
     'mpv'
@@ -197,7 +208,17 @@ if [ "$FT" == 'S' ]; then
         dnf install "$F" -y
     done
     rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+
+    dnf copr enable dawid/better_fonts -y
+    dnf install fontconfig-font-replacements -y
+    dnf install fontconfig-enhanced-defaults -y
 fi
+################################################################################
+
+############################# Codecs ###########################################
+dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y
+dnf install lame\* --exclude=lame-devel -y
+dnf group install --with-optional Multimedia -y
 ################################################################################
 
 ################################ Wallpapers #####################################
@@ -209,48 +230,11 @@ if [ "$WPP" == 'S' ]; then
 fi
 #################################################################################
 
-################################## Iconos #######################################
-read -rp "Instalar iconos? (S/N): " IC
-if [ "$IC" == 'S' ]; then
-    echo -e "\nInstalando iconos...\n"
-    for ICON in ./Iconos/*.xz
-    do
-        tar -xf "$ICON" -C /usr/share/icons/
-    done
-fi
-#################################################################################
-
-################################ Temas GTK ######################################
-read -rp "Instalar temas de escritorio? (S/N): " TM
-if [ "$TM" == 'S' ]; then
-    echo -e "\nInstalando temas GTK...\n"
-    for TEMA in ./TemasGTK/*.xz
-    do
-        tar -xf "$TEMA" -C /usr/share/themes/
-    done
-fi
-#################################################################################
-
-######################## Extensiones Gnome ######################################
-read -rp "Instalar Extensiones Gnome? (S/N): " EXT
-if [ "$EXT" == 'S' ]; then
-    HOMEDIR=$(grep "1000" /etc/passwd | awk -F : '{ print $6 }')
-    USER=$(grep "1000" /etc/passwd | awk -F : '{ print $1 }')
-    PWD=$(pwd)
-    for ARCHIVO in "$PWD"/Extensiones/*.zip
-    do
-        UUID=$(unzip -c "$ARCHIVO" metadata.json | grep uuid | cut -d \" -f4)
-        mkdir -p "$HOMEDIR"/.local/share/gnome-shell/extensions/"$UUID"
-        unzip -q "$ARCHIVO" -d "$HOMEDIR"/.local/share/gnome-shell/extensions/"$UUID"/
-    done
-    chown -R "$USER":"$USER" "$HOMEDIR"/.local/
-fi
-#################################################################################
-
-################################## Awesome ######################################
-read -rp "Instalar AwesomeWM? (S/N): " AW
+################################## WM ######################################
+read -rp "Instalar Window Managers? (S/N): " AW
 if [ "$AW" == 'S' ]; then
     AWPAQ=(
+        'qtile'
         'awesome'
         'dmenu'
         'rofi'
@@ -272,4 +256,5 @@ git clone https://github.com/vinceliuice/grub2-themes.git
 cd grub2-themes || return
 ./install.sh
 #################################################################################
+
 reboot
