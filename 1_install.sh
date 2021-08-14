@@ -158,6 +158,7 @@ PAQUETES=(
 
     #### DEV ####
     'clang'
+    'meson'
     'codeblocks'
     'filezilla'
     'golang'
@@ -258,5 +259,6 @@ git clone https://github.com/vinceliuice/grub2-themes.git
 cd grub2-themes || return
 ./install.sh
 #################################################################################
+sleep 2
 
 reboot
