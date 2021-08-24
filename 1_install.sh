@@ -119,6 +119,7 @@ PAQUETES=(
     'lshw-gui'
     'powerline'
     'neovim'
+    'python3-neovim'
     'emacs'
     'util-linux-user'
     'flameshot'
