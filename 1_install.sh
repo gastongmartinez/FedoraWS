@@ -239,6 +239,18 @@ if [ "$WPP" == 'S' ]; then
 fi
 #################################################################################
 
+################################ Wallpapers #####################################
+read -rp "Instalar PostgreSQL? (S/N): " PGS
+if [ "$PGS" == 'S' ]; then
+    rpm -i https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-fedora-repo-2-1.noarch.rpm
+    dnf install postgresql-server
+    dnf install pgadmin4 -y
+    dnf install postgis -y
+    dnf install postgis-client -y
+    dnf install postgis-utils -y
+fi
+#################################################################################
+
 ################################## WM ######################################
 read -rp "Instalar Window Managers? (S/N): " AW
 if [ "$AW" == 'S' ]; then
