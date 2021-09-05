@@ -249,7 +249,7 @@ if [ "$PGS" == 'S' ]; then
     dnf install postgis-client -y
     dnf install postgis-utils -y
 
-    postgresql-setup --initdb
+    /usr/pgsql-13/bin/postgresql-13-setup initdb
     systemctl enable postgresql.service
     systemctl start postgresql.service
 fi
