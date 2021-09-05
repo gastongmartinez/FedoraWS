@@ -243,11 +243,15 @@ fi
 read -rp "Instalar PostgreSQL? (S/N): " PGS
 if [ "$PGS" == 'S' ]; then
     rpm -i https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-fedora-repo-2-1.noarch.rpm
-    dnf install postgresql-server
+    dnf install postgresql-server -y
     dnf install pgadmin4 -y
     dnf install postgis -y
     dnf install postgis-client -y
     dnf install postgis-utils -y
+
+    postgresql-setup --initdb
+    systemctl enable postgresql.service
+    systemctl start postgresql.service
 fi
 #################################################################################
 
