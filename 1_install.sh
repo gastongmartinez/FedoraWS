@@ -212,6 +212,10 @@ if [ "$FT" == 'S' ]; then
         'cabextract'
         'xorg-x11-font-utils'
         'fontconfig'
+        'jetbrains-mono-fonts-all'
+        'msttcore-fonts-installer'
+        'google-carlito-fonts'
+        'texlive-caladea'
     )
     for F in "${FUENTES[@]}"; do
         dnf install "$F" -y
