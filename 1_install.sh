@@ -174,6 +174,7 @@ PAQUETES=(
     'code'
     'nodejs'
     'npm'
+    'yarnpkg'
 )
  
 for PAQ in "${PAQUETES[@]}"; do
