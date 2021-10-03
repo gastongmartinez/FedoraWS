@@ -15,6 +15,7 @@ then
     exit 2
 fi
 
+############################################################################################################################################
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
 unzip JetBrainsMono.zip -d ~/.local/share/fonts
 fc-cache -f -v
@@ -82,7 +83,7 @@ dconf write /com/github/repsac-by/quake-mode/quake-mode-tray false
 dconf write /org/gnome/shell/extensions/pop-shell/tile-by-default false
 dconf write /org/gnome/shell/extensions/pop-shell/gap-inner 'uint32 1'
 dconf write /org/gnome/shell/extensions/pop-shell/gap-outer 'uint32 1'
-dconf write /org/gnome/shell/extensions/pop-shell/hint-color-rgba "'rgb(0,134,26)'"
+dconf write /org/gnome/shell/extensions/pop-shell/hint-color-rgba "'rgb(170,170,170)'"
 dconf write /org/gnome/shell/extensions/pop-shell/active-hint false
 
 # Dash to dock
