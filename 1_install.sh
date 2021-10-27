@@ -71,7 +71,6 @@ PAQUETES=(
     'gnome-extensions-app'
     'gnome-shell-extension-user-theme'
     'gnome-shell-extension-native-window-placement'
-    'gnome-shell-extension-user-theme'
     'gnome-shell-extension-dash-to-dock'
     'gnome-shell-extension-no-overview'
     'gnome-shell-extension-pop-shell'
