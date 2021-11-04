@@ -17,12 +17,12 @@ if [ ! -d ~/Apps ]; then
     mkdir ~/Apps
 fi
 cd ~/Apps || return
-wget https://download.jetbrains.com/python/pycharm-community-2021.2.2.tar.gz
-wget https://download.jetbrains.com/idea/ideaIC-2021.2.2.tar.gz
-tar -xzf pycharm-community-2021.2.2.tar.gz
-tar -xzf ideaIC-2021.2.2.tar.gz
-rm pycharm-community-2021.2.2.tar.gz
-rm ideaIC-2021.2.2.tar.gz
+wget https://download.jetbrains.com/python/pycharm-community-2021.2.3.tar.gz
+wget https://download.jetbrains.com/idea/ideaIC-2021.2.3.tar.gz
+tar -xzf pycharm-community-2021.2.3.tar.gz
+tar -xzf ideaIC-2021.2.3.tar.gz
+rm pycharm-community-2021.2.3.tar.gz
+rm ideaIC-2021.2.3.tar.gz
 cd ~ || return
 
 # Bash
