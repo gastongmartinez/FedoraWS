@@ -116,7 +116,7 @@ dconf write /org/gnome/desktop/interface/monospace-font-name "'JetBrainsMono Ner
 dconf write /org/gnome/desktop/wm/preferences/titlebar-font "'Noto Sans CJK HK Bold 11'"
 
 # Aplicaciones favoritas
-dconf write /org/gnome/shell/favorite-apps "['io.elementary.files.desktop', 'io.elementary.terminal.desktop', 'org.gnome.Evolution.desktop', 'libreoffice-calc.desktop', 'code.desktop', 'chromium-browser.desktop', 'firefox.desktop', 'brave-browser.desktop', 'org.qbittorrent.qBittorrent.desktop', 'vlc.desktop', 'org.gnome.tweaks.desktop']"
+dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'io.elementary.terminal.desktop', 'org.gnome.Evolution.desktop', 'libreoffice-calc.desktop', 'code.desktop', 'chromium-browser.desktop', 'firefox.desktop', 'brave-browser.desktop', 'org.qbittorrent.qBittorrent.desktop', 'vlc.desktop', 'org.gnome.tweaks.desktop']"
 
 # Archivos
 dconf write /io/elementary/files/preferences/single-click false
