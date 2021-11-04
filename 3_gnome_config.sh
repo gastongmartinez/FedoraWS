@@ -58,7 +58,7 @@ git clone https://github.com/Raayib/WhiteSur-Dark-ulauncher.git ~/.config/ulaunc
 
 ############################################## Extensiones ##################################################################################
 # Activar extensiones
-dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.org', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'quake-mode@repsac-by.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'sensory-perception@HarlemSquirrel.github.io', 'systemd-manager@hardpixel.eu', 'tiling-assistant@leleat-on-github', 'tweaks-system-menu@extensions.gnome-shell.fifi.org', 'blur-my-shell@aunetx', 'no-overview@fthx', 'pop-shell@system76.com', 'dash-to-dock@micxgx.gmail.com']"
+dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.org', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'quake-mode@repsac-by.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'Vitals@CoreCoding.com', 'systemd-manager@hardpixel.eu', 'tiling-assistant@leleat-on-github', 'tweaks-system-menu@extensions.gnome-shell.fifi.org', 'blur-my-shell@aunetx', 'no-overview@fthx', 'pop-shell@system76.com', 'dash-to-dock@micxgx.gmail.com']"
 
 # ArcMenu
 dconf write /org/gnome/shell/extensions/arcmenu/available-placement "[true, false, false]"
@@ -112,7 +112,7 @@ dconf write /org/gnome/desktop/background/picture-uri "'file:///usr/share/backgr
 # Establecer fuentes
 dconf write /org/gnome/desktop/interface/font-name "'Noto Sans CJK HK 11'"
 dconf write /org/gnome/desktop/interface/document-font-name "'Noto Sans CJK HK 11'"
-dconf write /org/gnome/desktop/interface/monospace-font-name "'JetBrains Mono 11'"
+dconf write /org/gnome/desktop/interface/monospace-font-name "'JetBrainsMono Nerd Font 12'"
 dconf write /org/gnome/desktop/wm/preferences/titlebar-font "'Noto Sans CJK HK Bold 11'"
 
 # Aplicaciones favoritas
