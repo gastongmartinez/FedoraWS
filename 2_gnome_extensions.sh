@@ -24,9 +24,12 @@ cd "$DIRE" || return
 rm -rf ArcMenu
 
 # Sensory Perception
-git clone https://github.com/HarlemSquirrel/gnome-shell-extension-sensory-perception.git
-mv ./gnome-shell-extension-sensory-perception ~/.local/share/gnome-shell/extensions/sensory-perception@HarlemSquirrel.github.io
-cd "$DIRE" || return
+# git clone https://github.com/HarlemSquirrel/gnome-shell-extension-sensory-perception.git
+# mv ./gnome-shell-extension-sensory-perception ~/.local/share/gnome-shell/extensions/sensory-perception@HarlemSquirrel.github.io
+# cd "$DIRE" || return
+
+# Vitals
+git clone https://github.com/corecoding/Vitals.git ~/.local/share/gnome-shell/extensions/Vitals@CoreCoding.com
 
 # Blur my shell
 git clone https://github.com/aunetx/blur-my-shell
@@ -72,6 +75,8 @@ meson build
 ninja -C build install
 cd "$DIRE" || return
 rm -rf gnome-shell-extensions
+
+sed -i 's/"40.0"/"40.0",\n    "41"/g' "$HOME/.local/share/gnome-shell/extensions/tweaks-system-menu@extensions.gnome-shell.fifi.org/metadata.json"
 
 sleep 2
 
