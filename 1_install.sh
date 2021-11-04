@@ -212,8 +212,6 @@ if [ "$FT" == 'S' ]; then
         'cabextract'
         'xorg-x11-font-utils'
         'fontconfig'
-        #'jetbrains-mono-fonts-all'
-        'msttcore-fonts-installer'
         'google-carlito-fonts'
         'texlive-caladea'
         'fontforge'
