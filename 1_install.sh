@@ -128,8 +128,8 @@ PAQUETES=(
     'the_silver_searcher'
     'libreoffice-langpack-es'
     'aspell'
-    'x2goserver'
-    'plank'
+    #'x2goserver'
+    #'plank'
     'dconf-editor'
     'ulauncher'
     'rsync'
@@ -157,7 +157,7 @@ PAQUETES=(
     'inkscape'
     'krita'
     'blender'
-    'freecad'
+    #'freecad'
 
     #### DEV ####
     'clang'
@@ -247,9 +247,9 @@ fi
 ################################ Wallpapers #####################################
 read -rp "Instalar PostgreSQL? (S/N): " PGS
 if [ "$PGS" == 'S' ]; then
-    rpm -i https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-fedora-repo-2-1.noarch.rpm
+    #rpm -i https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-fedora-repo-2-1.noarch.rpm
     dnf install postgresql-server -y
-    dnf install pgadmin4 -y
+    #dnf install pgadmin4 -y
     dnf install postgis -y
     dnf install postgis-client -y
     dnf install postgis-utils -y
@@ -281,11 +281,11 @@ fi
 #################################################################################
 
 ############################### GRUB ############################################
-cp /usr/share/grub/unicode.pf2 /boot/efi/EFI/fedora/fonts/unicode.pf2
 git clone https://github.com/vinceliuice/grub2-themes.git
 cd grub2-themes || return
 ./install.sh
 #################################################################################
+
 sleep 2
 
 reboot
