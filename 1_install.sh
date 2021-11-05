@@ -253,7 +253,6 @@ if [ "$PGS" == 'S' ]; then
     dnf install postgis-utils -y
 
     postgresql-setup --initdb --unit postgresql
-    #/usr/pgsql-13/bin/postgresql-13-setup initdb
     systemctl enable postgresql.service
 fi
 #################################################################################
@@ -283,6 +282,8 @@ git clone https://github.com/vinceliuice/grub2-themes.git
 cd grub2-themes || return
 ./install.sh
 #################################################################################
+
+alternatives --set java java-1.8.0-openjdk.x86_64
 
 sleep 2
 
