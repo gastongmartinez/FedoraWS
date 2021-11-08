@@ -168,6 +168,7 @@ PAQUETES=(
     'filezilla'
     'golang'
     'rust'
+    'cargo'
     'java-1.8.0-openjdk'
     #'java-latest-openjdk'
     'code'
