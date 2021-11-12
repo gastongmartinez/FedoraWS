@@ -7,6 +7,10 @@ fi
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
 
+# NeoVim
+mkdir -p ~/.config/nvim
+git clone https://github.com/gastongmartinez/Nvim ~/.config/nvim
+
 # Anaconda
 wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
 chmod +x Anaconda3-2021.05-Linux-x86_64.sh
