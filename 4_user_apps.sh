@@ -40,12 +40,14 @@ rm flutter_linux_2.5.3-stable.tar.xz
 cd ~ || return
 
 # Bash
-git clone --recursive https://github.com/andresgongora/synth-shell.git
-chmod +x synth-shell/setup.sh
-cd synth-shell || return
-./setup.sh
-cd ..
-rm -rf synth-shell
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+sed -i 's/"font"/"powerline"/g' "$HOME/.bashrc"
+# git clone --recursive https://github.com/andresgongora/synth-shell.git
+# chmod +x synth-shell/setup.sh
+# cd synth-shell || return
+# ./setup.sh
+# cd ..
+# rm -rf synth-shell
 
 # Lazygit
 git clone https://github.com/jesseduffield/lazygit.git
