@@ -256,14 +256,14 @@ if [ "$PGS" == 'S' ]; then
     postgresql-setup --initdb --unit postgresql
     # systemctl enable postgresql.service
 
-    dnf install mariadb-server-utils
+    dnf install mariadb-server-utils -y
 fi
 #################################################################################
 
 #################################################################################
 read -rp "Instalar Cockpit? (S/N): " CKP
 if [ "$CKP" == 'S' ]; then
-    dnf install cockpit
+    dnf install cockpit -y
     systemctl enable --now cockpit.socket
     firewall-cmd --add-service=cockpit
     firewall-cmd --add-service=cockpit --permanent
