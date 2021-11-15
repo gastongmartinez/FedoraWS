@@ -243,8 +243,8 @@ if [ "$WPP" == 'S' ]; then
 fi
 #################################################################################
 
-################################ Wallpapers #####################################
-read -rp "Instalar PostgreSQL? (S/N): " PGS
+############################## Bases de Datos ###################################
+read -rp "Instalar Bases de Datos? (S/N): " PGS
 if [ "$PGS" == 'S' ]; then
     #rpm -i https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-fedora-repo-2-1.noarch.rpm
     dnf install postgresql-server -y
@@ -254,9 +254,22 @@ if [ "$PGS" == 'S' ]; then
     dnf install postgis-utils -y
 
     postgresql-setup --initdb --unit postgresql
-    systemctl enable postgresql.service
+    # systemctl enable postgresql.service
+
+    dnf install mariadb-server-utils
 fi
 #################################################################################
+
+#################################################################################
+read -rp "Instalar Cockpit? (S/N): " CKP
+if [ "$CKP" == 'S' ]; then
+    dnf install cockpit
+    systemctl enable --now cockpit.socket
+    firewall-cmd --add-service=cockpit
+    firewall-cmd --add-service=cockpit --permanent
+fi
+#################################################################################
+
 
 ################################## WM ######################################
 read -rp "Instalar Window Managers? (S/N): " AW
