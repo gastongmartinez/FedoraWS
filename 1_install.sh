@@ -196,6 +196,8 @@ if [ "$VIRT" == 'S' ]; then
     for PAQ in "${VIRTPKGS[@]}"; do
         dnf install "$PAQ" -y
     done
+    USER=$(grep "1000" /etc/passwd | awk -F : '{ print $1 }')
+    usermod -aG libvirt "$USER"
 fi
 ################################################################################
 
