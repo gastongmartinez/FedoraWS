@@ -60,6 +60,8 @@ dnf install dnf-plugins-core -y
 dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
 rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
+USER=$(grep "1000" /etc/passwd | awk -F : '{ print $1 }')
+
 ############################### Apps Generales ################################
 PAQUETES=(
     #### Powermanagement ####
@@ -196,7 +198,6 @@ if [ "$VIRT" == 'S' ]; then
     for PAQ in "${VIRTPKGS[@]}"; do
         dnf install "$PAQ" -y
     done
-    USER=$(grep "1000" /etc/passwd | awk -F : '{ print $1 }')
     usermod -aG libvirt "$USER"
 fi
 ################################################################################
@@ -272,6 +273,7 @@ if [ "$CKP" == 'S' ]; then
 fi
 #################################################################################
 
+sed -i 's/Icon=\/var\/lib\/AccountsService\/icons\/"$USER"/Icon=\/usr\/share\/backgrounds\/wallpapers\/Fringe\/fibonacci2.jpg/g' "/var/lib/AccountsService/users/$USER"
 
 ################################## WM ######################################
 read -rp "Instalar Window Managers? (S/N): " AW
