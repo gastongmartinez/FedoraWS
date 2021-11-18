@@ -273,7 +273,7 @@ if [ "$CKP" == 'S' ]; then
 fi
 #################################################################################
 
-sed -i 's/Icon=\/var\/lib\/AccountsService\/icons\/"$USER"/Icon=\/usr\/share\/backgrounds\/wallpapers\/Fringe\/fibonacci2.jpg/g' "/var/lib/AccountsService/users/$USER"
+sed -i 's/Icon=\/var\/lib\/AccountsService\/icons\/"$USER"/Icon=\/usr\/share\/backgrounds\/wallpapers\/Fringe\/fibonacci3.jpg/g' "/var/lib/AccountsService/users/$USER"
 
 ################################## WM ######################################
 read -rp "Instalar Window Managers? (S/N): " AW
