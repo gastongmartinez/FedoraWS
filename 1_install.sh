@@ -101,6 +101,7 @@ PAQUETES=(
     #### Archivos ####
     'mc'
     'doublecmd-gtk'
+    'nemo'
     'vifm'
     'meld'
     'stow'
