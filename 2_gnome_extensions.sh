@@ -23,10 +23,12 @@ make install
 cd "$DIRE" || return
 rm -rf ArcMenu
 
-# Sensory Perception
-# git clone https://github.com/HarlemSquirrel/gnome-shell-extension-sensory-perception.git
-# mv ./gnome-shell-extension-sensory-perception ~/.local/share/gnome-shell/extensions/sensory-perception@HarlemSquirrel.github.io
-# cd "$DIRE" || return
+# Dash to Panel
+git clone https://github.com/home-sweet-gnome/dash-to-panel.git
+cd dash-to-panel || return
+make install
+cd "$DIRE" || return
+rm -rf dash-to-panel
 
 # Vitals
 git clone https://github.com/corecoding/Vitals.git ~/.local/share/gnome-shell/extensions/Vitals@CoreCoding.com
