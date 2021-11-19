@@ -58,7 +58,7 @@ git clone https://github.com/Raayib/WhiteSur-Dark-ulauncher.git ~/.config/ulaunc
 
 ############################################## Extensiones ##################################################################################
 # Activar extensiones
-dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.org', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'quake-mode@repsac-by.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'Vitals@CoreCoding.com', 'systemd-manager@hardpixel.eu', 'tiling-assistant@leleat-on-github', 'tweaks-system-menu@extensions.gnome-shell.fifi.org', 'blur-my-shell@aunetx', 'no-overview@fthx', 'pop-shell@system76.com', 'dash-to-dock@micxgx.gmail.com']"
+dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.org', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'quake-mode@repsac-by.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'Vitals@CoreCoding.com', 'systemd-manager@hardpixel.eu', 'tiling-assistant@leleat-on-github', 'tweaks-system-menu@extensions.gnome-shell.fifi.org', 'blur-my-shell@aunetx', 'no-overview@fthx', 'pop-shell@system76.com', 'dash-to-dock@micxgx.gmail.com', 'sound-output-device-chooser@kgshank.net']"
 
 # ArcMenu
 dconf write /org/gnome/shell/extensions/arcmenu/available-placement "[true, false, false]"
@@ -90,6 +90,9 @@ dconf write /org/gnome/shell/extensions/pop-shell/active-hint false
 dconf write /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size 32
 dconf write /org/gnome/shell/extensions/dash-to-dock/show-apps-at-top true
 dconf write /org/gnome/shell/extensions/dash-to-dock/apply-custom-theme true
+
+# Sound Input & Output Device Chooser
+dconf write /org/gnome/shell/extensions/sound-output-device-chooser/integrate-with-slider true
 
 dconf write /org/gnome/shell/disable-user-extensions false
 #############################################################################################################################################
