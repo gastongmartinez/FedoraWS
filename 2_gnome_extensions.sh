@@ -79,6 +79,13 @@ ninja -C build install
 cd "$DIRE" || return
 rm -rf gnome-shell-extensions
 
+# Sound Input & Output Device Chooser
+git clone https://github.com/kgshank/gse-sound-output-device-chooser.git
+cd gse-sound-output-device-chooser || return
+cp -r sound-output-device-chooser@kgshank.net ~/.local/share/gnome-shell/extensions/
+cd "$DIRE" || return
+rm -rf gse-sound-output-device-chooser
+
 sed -i 's/"40.0"/"40.0",\n    "41"/g' "$HOME/.local/share/gnome-shell/extensions/tweaks-system-menu@extensions.gnome-shell.fifi.org/metadata.json"
 
 sleep 2
