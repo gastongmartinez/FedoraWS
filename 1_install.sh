@@ -131,6 +131,7 @@ PAQUETES=(
     'the_silver_searcher'
     'libreoffice-langpack-es'
     'foliate'
+    'feedreader' 
     'aspell'
     #'x2goserver'
     #'plank'
