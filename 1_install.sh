@@ -197,6 +197,7 @@ if [ "$VIRT" == 'S' ]; then
         'ebtables-services'
         'dnsmasq'
         'bridge-utils'
+        'VirtualBox'
     )
     for PAQ in "${VIRTPKGS[@]}"; do
         dnf install "$PAQ" -y
