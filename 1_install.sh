@@ -130,6 +130,7 @@ PAQUETES=(
     'fzf'
     'the_silver_searcher'
     'libreoffice-langpack-es'
+    'foliate'
     'aspell'
     #'x2goserver'
     #'plank'
