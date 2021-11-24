@@ -111,6 +111,7 @@ PAQUETES=(
 
     #### Sistema ####
     'p7zip'
+    'unrar'
     'alacritty'
     'conky'
     'conky-manager'
@@ -198,12 +199,15 @@ if [ "$VIRT" == 'S' ]; then
         'ebtables-services'
         'dnsmasq'
         'bridge-utils'
+        'uml_utilities'
+        'libguestfs'
         'VirtualBox'
     )
     for PAQ in "${VIRTPKGS[@]}"; do
         dnf install "$PAQ" -y
     done
     usermod -aG libvirt "$USER"
+    usermod -aG kvm "$USER"
 fi
 ################################################################################
 
