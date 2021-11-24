@@ -193,6 +193,7 @@ if [ "$VIRT" == 'S' ]; then
     VIRTPKGS=(
         'virt-manager'
         'qemu-kvm'
+        'libvirt-client'
         'edk2-ovmf'
         'ebtables-services'
         'dnsmasq'
