@@ -12,9 +12,9 @@ mkdir -p ~/.config/nvim
 git clone https://github.com/gastongmartinez/Nvim ~/.config/nvim
 
 # Anaconda
-wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
-chmod +x Anaconda3-2021.05-Linux-x86_64.sh
-./Anaconda3-2021.05-Linux-x86_64.sh
+wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh
+chmod +x Anaconda3-2021.11-Linux-x86_64.sh
+./Anaconda3-2021.11-Linux-x86_64.sh
 
 # Jetbrains
 if [ ! -d ~/Apps ]; then
