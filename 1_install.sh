@@ -111,6 +111,7 @@ PAQUETES=(
 
     #### Sistema ####
     'p7zip'
+    'unrar'
     'alacritty'
     'conky'
     'conky-manager'
@@ -130,6 +131,8 @@ PAQUETES=(
     'fzf'
     'the_silver_searcher'
     'libreoffice-langpack-es'
+    'foliate'
+    'feedreader' 
     'aspell'
     #'x2goserver'
     #'plank'
@@ -191,15 +194,20 @@ if [ "$VIRT" == 'S' ]; then
     VIRTPKGS=(
         'virt-manager'
         'qemu-kvm'
+        'libvirt-client'
         'edk2-ovmf'
         'ebtables-services'
         'dnsmasq'
         'bridge-utils'
+        'uml_utilities'
+        'libguestfs'
+        'VirtualBox'
     )
     for PAQ in "${VIRTPKGS[@]}"; do
         dnf install "$PAQ" -y
     done
     usermod -aG libvirt "$USER"
+    usermod -aG kvm "$USER"
 fi
 ################################################################################
 
