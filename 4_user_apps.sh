@@ -31,12 +31,12 @@ cd ~ || return
 
 # Android
 cd ~/Apps || return
-wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2020.3.1.25/android-studio-2020.3.1.25-linux.tar.gz 
-tar -xzf android-studio-2020.3.1.25-linux.tar.gz
-rm android-studio-2020.3.1.25-linux.tar.gz
-wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_2.5.3-stable.tar.xz
-tar xf flutter_linux_2.5.3-stable.tar.xz
-rm flutter_linux_2.5.3-stable.tar.xz
+wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2020.3.1.25/android-studio-2020.3.1.26-linux.tar.gz 
+tar -xzf android-studio-2020.3.1.26-linux.tar.gz
+rm android-studio-2020.3.1.26-linux.tar.gz
+wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_2.8.1-stable.tar.xz
+tar xf flutter_linux_2.8.1-stable.tar.xz
+rm flutter_linux_2.8.1-stable.tar.xz
 cd ~ || return
 
 # Bash
