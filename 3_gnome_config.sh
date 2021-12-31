@@ -133,10 +133,6 @@ dconf write /org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-timeout 7
 dconf write /org/gnome/settings-daemon/plugins/power/sleep-inactive-battery-timeout 1800
 #############################################################################################################################################
 
-# Tema Ulauncher
-mkdir -p ~/.config/ulauncher/user-themes
-git clone https://github.com/Raayib/WhiteSur-Dark-ulauncher.git ~/.config/ulauncher/user-themes/WhiteSur-Dark-ulauncher
-
 # Git
 git config --global user.email "gastongmartinez@gmail.com"
 git config --global user.name "Gastón Martínez"
