@@ -133,10 +133,6 @@ dconf write /org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-timeout 7
 dconf write /org/gnome/settings-daemon/plugins/power/sleep-inactive-battery-timeout 1800
 #############################################################################################################################################
 
-# Git
-git config --global user.email "gastongmartinez@gmail.com"
-git config --global user.name "Gastón Martínez"
-
 sleep 2
 
 reboot
