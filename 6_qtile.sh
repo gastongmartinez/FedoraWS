@@ -25,7 +25,7 @@ rm -rf qtile
     echo '[Desktop Entry]'
     echo 'Name=Qtile'
     echo 'Comment=A hackable tiling window manager written and configured in Python'
-    echo 'TryExec=qtile start'
+    echo 'TryExec=qtile'
     echo 'Exec=qtile start'
     echo 'Type=Application'
 } >> /usr/share/xsessions/qtile.desktop
