@@ -119,7 +119,7 @@ dconf write /org/gnome/desktop/interface/monospace-font-name "'JetBrainsMono Ner
 dconf write /org/gnome/desktop/wm/preferences/titlebar-font "'Noto Sans CJK HK Bold 11'"
 
 # Aplicaciones favoritas
-dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'io.elementary.terminal.desktop', 'org.gnome.Evolution.desktop', 'libreoffice-calc.desktop', 'code.desktop', 'chromium-browser.desktop', 'firefox.desktop', 'brave-browser.desktop', 'org.qbittorrent.qBittorrent.desktop', 'vlc.desktop', 'org.gnome.tweaks.desktop']"
+dconf write /org/gnome/shell/favorite-apps "['thunar.desktop', 'io.elementary.terminal.desktop', 'Alacritty.desktop', 'virt-manager.desktop', 'virtualbox.desktop', 'mozilla-thunderbird.desktop', 'org.gnome.FeedReader.desktop', 'libreoffice-calc.desktop', 'org.gnome.Calculator.desktop', 'code.desktop', 'jetbrains-pycharm-ce.desktop', 'google-chrome.desktop', 'firefox.desktop', 'brave-browser.desktop', 'org.qbittorrent.qBittorrent.desktop', 'vlc.desktop']"
 
 # Nautilus
 dconf write /org/gnome/nautilus/icon-view/default-zoom-level "'small'"
