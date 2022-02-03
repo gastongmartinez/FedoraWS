@@ -258,9 +258,9 @@ fi
 ############################## Bases de Datos ###################################
 read -rp "Instalar Bases de Datos? (S/N): " PGS
 if [ "$PGS" == 'S' ]; then
-    #rpm -i https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-fedora-repo-2-1.noarch.rpm
+    rpm -i https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-fedora-repo-2-1.noarch.rpm
     dnf install postgresql-server -y
-    #dnf install pgadmin4 -y
+    dnf install pgadmin4 -y
     dnf install postgis -y
     dnf install postgis-client -y
     dnf install postgis-utils -y
@@ -288,7 +288,7 @@ sed -i "s/Icon=\/var\/lib\/AccountsService\/icons\/$USER/Icon=\/usr\/share\/back
 read -rp "Instalar Window Managers? (S/N): " AW
 if [ "$AW" == 'S' ]; then
     AWPAQ=(
-        'qtile'
+        #'qtile'
         'awesome'
         'dmenu'
         'rofi'
