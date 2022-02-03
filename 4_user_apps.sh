@@ -21,19 +21,19 @@ if [ ! -d ~/Apps ]; then
     mkdir ~/Apps
 fi
 cd ~/Apps || return
-wget https://download.jetbrains.com/python/pycharm-community-2021.3.tar.gz
-wget https://download.jetbrains.com/idea/ideaIC-2021.3.tar.gz
-tar -xzf pycharm-community-2021.3.tar.gz
-tar -xzf ideaIC-2021.3.tar.gz
-rm pycharm-community-2021.3.tar.gz
-rm ideaIC-2021.3.tar.gz
+wget https://download.jetbrains.com/python/pycharm-community-2021.3.2.tar.gz
+wget https://download.jetbrains.com/idea/ideaIC-2021.3.2.tar.gz
+tar -xzf pycharm-community-2021.3.2.tar.gz
+tar -xzf ideaIC-2021.3.2.tar.gz
+rm pycharm-community-2021.3.2.tar.gz
+rm ideaIC-2021.3.2.tar.gz
 cd ~ || return
 
 # Android
 cd ~/Apps || return
-wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2020.3.1.25/android-studio-2020.3.1.26-linux.tar.gz 
-tar -xzf android-studio-2020.3.1.26-linux.tar.gz
-rm android-studio-2020.3.1.26-linux.tar.gz
+wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2021.1.1.20/android-studio-2021.1.1.20-linux.tar.gz
+tar -xzf android-studio-2021.1.1.20-linux.tar.gz
+rm android-studio-2021.1.1.20-linux.tar.gz
 wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_2.8.1-stable.tar.xz
 tar xf flutter_linux_2.8.1-stable.tar.xz
 rm flutter_linux_2.8.1-stable.tar.xz
