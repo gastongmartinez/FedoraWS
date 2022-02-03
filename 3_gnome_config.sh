@@ -121,9 +121,6 @@ dconf write /org/gnome/desktop/wm/preferences/titlebar-font "'Noto Sans CJK HK B
 # Aplicaciones favoritas
 dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'io.elementary.terminal.desktop', 'org.gnome.Evolution.desktop', 'libreoffice-calc.desktop', 'code.desktop', 'chromium-browser.desktop', 'firefox.desktop', 'brave-browser.desktop', 'org.qbittorrent.qBittorrent.desktop', 'vlc.desktop', 'org.gnome.tweaks.desktop']"
 
-# Archivos
-dconf write /io/elementary/files/preferences/single-click false
-
 # Nautilus
 dconf write /org/gnome/nautilus/icon-view/default-zoom-level "'small'"
 # Suspender
