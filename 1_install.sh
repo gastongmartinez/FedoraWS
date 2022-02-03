@@ -100,8 +100,9 @@ PAQUETES=(
 
     #### Archivos ####
     'mc'
-    'doublecmd-gtk'
-    'nemo'
+    #'doublecmd-gtk'
+    #'nemo'
+    'thunar'
     'vifm'
     'meld'
     'stow'
@@ -140,7 +141,6 @@ PAQUETES=(
     'ulauncher'
     'rsync'
     'dnfdragora'
-    'elementary-files'
     'elementary-terminal'
 
     #### Multimedia ####
