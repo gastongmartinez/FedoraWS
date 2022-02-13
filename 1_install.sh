@@ -135,6 +135,7 @@ PAQUETES=(
     'foliate'
     'feedreader' 
     'aspell'
+    'pandoc'
     #'x2goserver'
     #'plank'
     'dconf-editor'
