@@ -12,6 +12,9 @@ dnf install python3-cffi -y
 dnf install python3-xcffib -y
 dnf install python3-cairocffi -y
 dnf install pango -y
+dnf install python3-dbus-next -y
+dnf install xorg-x11-server-Xephyr -y
+dnf install python3-pyvirtualdisplay -y
 
 pip install --no-cache-dir cairocffi
 
