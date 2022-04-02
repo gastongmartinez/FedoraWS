@@ -143,6 +143,7 @@ PAQUETES=(
     'rsync'
     'dnfdragora'
     'elementary-terminal'
+    'stacer'
 
     #### Multimedia ####
     'elementary-music'
@@ -152,6 +153,7 @@ PAQUETES=(
 
     #### Juegos ####
     'chromium-bsu'
+    'retroarch'
 
     #### Redes ####
     'nmap'
