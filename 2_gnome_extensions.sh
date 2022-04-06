@@ -41,19 +41,19 @@ cd "$DIRE" || return
 rm -rf blur-my-shell
 
 # Systemd Manager
-git clone https://github.com/hardpixel/systemd-manager.git
-cd systemd-manager || return
-mv ./systemd-manager@hardpixel.eu ~/.local/share/gnome-shell/extensions/systemd-manager@hardpixel.eu
-cd "$DIRE" || return
-rm -rf systemd-manager
+#git clone https://github.com/hardpixel/systemd-manager.git
+#cd systemd-manager || return
+#mv ./systemd-manager@hardpixel.eu ~/.local/share/gnome-shell/extensions/systemd-manager@hardpixel.eu
+#cd "$DIRE" || return
+#rm -rf systemd-manager
 
 # Tiling assistant
-git clone https://github.com/Leleat/Tiling-Assistant.git
-cd Tiling-Assistant/scripts || return
-chmod +x build.sh
-./build.sh -i
-cd "$DIRE" || return
-rm -rf Tiling-Assistant
+#git clone https://github.com/Leleat/Tiling-Assistant.git
+#cd Tiling-Assistant/scripts || return
+#chmod +x build.sh
+#./build.sh -i
+#cd "$DIRE" || return
+#rm -rf Tiling-Assistant
 
 # Tweaks and Extensions in System Menu
 git clone https://github.com/F-i-f/tweaks-system-menu.git
@@ -64,12 +64,12 @@ cd "$DIRE" || return
 rm -rf tweaks-system-menu
 
 # Quake-Mode
-git clone https://github.com/repsac-by/gnome-shell-extension-quake-mode.git
-cd gnome-shell-extension-quake-mode || return
-gnome-extensions pack quake-mode@repsac-by.github.com --extra-source={quakemodeapp,util}.js
-gnome-extensions install quake-mode@repsac-by.github.com.shell-extension.zip
-cd "$DIRE" || return
-rm -rf gnome-shell-extension-quake-mode
+#git clone https://github.com/repsac-by/gnome-shell-extension-quake-mode.git
+#cd gnome-shell-extension-quake-mode || return
+#gnome-extensions pack quake-mode@repsac-by.github.com --extra-source={quakemodeapp,util}.js
+#gnome-extensions install quake-mode@repsac-by.github.com.shell-extension.zip
+#cd "$DIRE" || return
+#rm -rf gnome-shell-extension-quake-mode
 
 # Removable Drive
 git clone https://gitlab.gnome.org/GNOME/gnome-shell-extensions.git
@@ -80,13 +80,13 @@ cd "$DIRE" || return
 rm -rf gnome-shell-extensions
 
 # Sound Input & Output Device Chooser
-git clone https://github.com/kgshank/gse-sound-output-device-chooser.git
-cd gse-sound-output-device-chooser || return
-cp -r sound-output-device-chooser@kgshank.net ~/.local/share/gnome-shell/extensions/
-cd "$DIRE" || return
-rm -rf gse-sound-output-device-chooser
+#git clone https://github.com/kgshank/gse-sound-output-device-chooser.git
+#cd gse-sound-output-device-chooser || return
+#cp -r sound-output-device-chooser@kgshank.net ~/.local/share/gnome-shell/extensions/
+#cd "$DIRE" || return
+#rm -rf gse-sound-output-device-chooser
 
-sed -i 's/"40.0"/"40.0",\n    "41"/g' "$HOME/.local/share/gnome-shell/extensions/tweaks-system-menu@extensions.gnome-shell.fifi.org/metadata.json"
+#sed -i 's/"40.0"/"40.0",\n    "41"/g' "$HOME/.local/share/gnome-shell/extensions/tweaks-system-menu@extensions.gnome-shell.fifi.org/metadata.json"
 
 sleep 2
 

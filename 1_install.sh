@@ -76,6 +76,8 @@ PAQUETES=(
     'gnome-shell-extension-dash-to-dock'
     'gnome-shell-extension-no-overview'
     'gnome-shell-extension-pop-shell'
+    'gnome-shell-extension-caffeine'
+    'gnome-shell-extension-sound-output-device-chooser'
     'file-roller-nautilus'
 
     #### WEB ####
@@ -84,17 +86,17 @@ PAQUETES=(
     'remmina'
     'qbittorrent'
     'brave-browser'
-    'evolution'
+    #'evolution'
 
     #### Shells ####
-    'fish'
+    #'fish'
     'zsh'
     'zsh-autosuggestions'
     'zsh-syntax-highlighting'
     'bash-completion'
     'dialog'
     'autojump'
-    'autojump-fish'
+    #'autojump-fish'
     'autojump-zsh'
     'ShellCheck'
 
@@ -107,15 +109,15 @@ PAQUETES=(
     'meld'
     'stow'
     'ripgrep'
-    'exfatprogs'
+    #'exfatprogs'
     'autofs'
 
     #### Sistema ####
     'p7zip'
     'unrar'
     'alacritty'
-    'conky'
-    'conky-manager'
+    #'conky'
+    #'conky-manager'
     'htop'
     'bpytop'
     'neofetch'
@@ -159,7 +161,7 @@ PAQUETES=(
     'nmap'
     'wireshark'
     'firewall-applet'
-    'firewall-config'
+    #'firewall-config'
 
     #### Diseño ####
     'gimp'
@@ -204,7 +206,7 @@ if [ "$VIRT" == 'S' ]; then
         'bridge-utils'
         'uml_utilities'
         'libguestfs'
-        'VirtualBox'
+        #'VirtualBox'
     )
     for PAQ in "${VIRTPKGS[@]}"; do
         dnf install "$PAQ" -y
@@ -237,9 +239,9 @@ if [ "$FT" == 'S' ]; then
     done
     rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
-    dnf copr enable dawid/better_fonts -y
-    dnf install fontconfig-font-replacements -y
-    dnf install fontconfig-enhanced-defaults -y
+    #dnf copr enable dawid/better_fonts -y
+    #dnf install fontconfig-font-replacements -y
+    #dnf install fontconfig-enhanced-defaults -y
 fi
 ################################################################################
 
@@ -261,7 +263,7 @@ fi
 ############################## Bases de Datos ###################################
 read -rp "Instalar Bases de Datos? (S/N): " PGS
 if [ "$PGS" == 'S' ]; then
-    rpm -i https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-fedora-repo-2-1.noarch.rpm
+    #rpm -i https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-fedora-repo-2-1.noarch.rpm
     dnf install postgresql-server -y
     dnf install pgadmin4 -y
     dnf install postgis -y
@@ -286,6 +288,14 @@ fi
 #################################################################################
 
 sed -i "s/Icon=\/var\/lib\/AccountsService\/icons\/$USER/Icon=\/usr\/share\/backgrounds\/wallpapers\/Fringe\/fibonacci3.jpg/g" "/var/lib/AccountsService/users/$USER"
+
+#################################################################################
+read -rp "Instalar XFCE? (S/N): " XFCE
+if [ "$XFCE" == 'S' ]; then
+    dnf install @xfce-desktop-environment -y
+fi
+#################################################################################
+
 
 ################################## WM ######################################
 read -rp "Instalar Window Managers? (S/N): " AW

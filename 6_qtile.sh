@@ -18,7 +18,7 @@ dnf install python3-pyvirtualdisplay -y
 
 pip install --no-cache-dir cairocffi
 
-git clone git://github.com/qtile/qtile.git
+git clone https://github.com/qtile/qtile.git
 cd qtile || return
 pip install .
 cd ..
@@ -31,4 +31,4 @@ rm -rf qtile
     echo 'TryExec=qtile'
     echo 'Exec=qtile start'
     echo 'Type=Application'
-} >> /usr/share/xsessions/qtile.desktop
+} > /usr/share/xsessions/qtile.desktop
