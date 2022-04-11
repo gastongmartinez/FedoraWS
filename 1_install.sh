@@ -60,6 +60,9 @@ dnf install dnf-plugins-core -y
 dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
 rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
+# CORP
+dnf copr enable atim/lazygit -y
+
 USER=$(grep "1000" /etc/passwd | awk -F : '{ print $1 }')
 
 ############################### Apps Generales ################################
@@ -186,6 +189,7 @@ PAQUETES=(
     'nodejs'
     'npm'
     'yarnpkg'
+    'lazygit'
 )
  
 for PAQ in "${PAQUETES[@]}"; do
@@ -296,6 +300,20 @@ if [ "$XFCE" == 'S' ]; then
 fi
 #################################################################################
 
+#################################################################################
+read -rp "Instalar Mate? (S/N): " MT
+if [ "$MT" == 'S' ]; then
+    dnf install @mate-desktop -y
+    dnf install @mate-applications -y
+fi
+#################################################################################
+
+#################################################################################
+read -rp "Instalar KDE? (S/N): " KDE
+if [ "$KDE" == 'S' ]; then
+    dnf install @kde-desktop -y
+fi
+#################################################################################
 
 ################################## WM ######################################
 read -rp "Instalar Window Managers? (S/N): " AW
