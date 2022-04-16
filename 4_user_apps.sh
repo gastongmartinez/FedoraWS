@@ -21,12 +21,12 @@ if [ ! -d ~/Apps ]; then
     mkdir ~/Apps
 fi
 cd ~/Apps || return
-wget https://download.jetbrains.com/python/pycharm-community-2021.3.3.tar.gz
-wget https://download.jetbrains.com/idea/ideaIC-2021.3.3.tar.gz
-tar -xzf pycharm-community-2021.3.3.tar.gz
-tar -xzf ideaIC-2021.3.3.tar.gz
-rm pycharm-community-2021.3.3.tar.gz
-rm ideaIC-2021.3.3.tar.gz
+wget https://download.jetbrains.com/python/pycharm-community-2022.1.tar.gz
+wget https://download.jetbrains.com/idea/ideaIC-2022.1.tar.gz
+tar -xzf pycharm-community-2022.1.tar.gz
+tar -xzf ideaIC-2022.1.tar.gz
+rm pycharm-community-2022.1.tar.gz
+rm ideaIC-2022.1.tar.gz
 cd ~ || return
 
 # Android
