@@ -73,6 +73,7 @@ PAQUETES=(
 
     #### Gnome ####
     'gnome-tweaks'
+    'gnome-feeds'
     'gnome-extensions-app'
     'gnome-shell-extension-user-theme'
     'gnome-shell-extension-native-window-placement'
@@ -130,7 +131,6 @@ PAQUETES=(
     'the_silver_searcher'
     'libreoffice-langpack-es'
     'foliate'
-    'feedreader' 
     'aspell'
     'pandoc'
     'dconf-editor'
@@ -155,7 +155,6 @@ PAQUETES=(
     'nmap'
     'wireshark'
     'firewall-applet'
-    'firewall-config'
     'gns3-gui'
     'gns3-server'
 
@@ -168,7 +167,6 @@ PAQUETES=(
     #### DEV ####
     'clang'
     'meson'
-    'codeblocks'
     'python3-spyder'
     'rstudio-desktop'
     'filezilla'
