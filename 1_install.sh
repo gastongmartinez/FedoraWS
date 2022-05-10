@@ -89,38 +89,30 @@ PAQUETES=(
     'remmina'
     'qbittorrent'
     'brave-browser'
-    #'evolution'
 
     #### Shells ####
-    #'fish'
     'zsh'
     'zsh-autosuggestions'
     'zsh-syntax-highlighting'
     'bash-completion'
     'dialog'
     'autojump'
-    #'autojump-fish'
     'autojump-zsh'
     'ShellCheck'
 
     #### Archivos ####
     'mc'
-    #'doublecmd-gtk'
-    #'nemo'
     'thunar'
     'vifm'
     'meld'
     'stow'
     'ripgrep'
-    #'exfatprogs'
     'autofs'
 
     #### Sistema ####
     'p7zip'
     'unrar'
     'alacritty'
-    #'conky'
-    #'conky-manager'
     'htop'
     'bpytop'
     'neofetch'
@@ -141,14 +133,13 @@ PAQUETES=(
     'feedreader' 
     'aspell'
     'pandoc'
-    #'x2goserver'
-    #'plank'
     'dconf-editor'
     'ulauncher'
     'rsync'
     'dnfdragora'
     'elementary-terminal'
     'stacer'
+    'timeshift'
 
     #### Multimedia ####
     'elementary-music'
@@ -164,14 +155,15 @@ PAQUETES=(
     'nmap'
     'wireshark'
     'firewall-applet'
-    #'firewall-config'
+    'firewall-config'
+    'gns3-gui'
+    'gns3-server'
 
     #### Diseño ####
     'gimp'
     'inkscape'
     'krita'
     'blender'
-    #'freecad'
 
     #### DEV ####
     'clang'
@@ -210,7 +202,6 @@ if [ "$VIRT" == 'S' ]; then
         'bridge-utils'
         'uml_utilities'
         'libguestfs'
-        #'VirtualBox'
     )
     for PAQ in "${VIRTPKGS[@]}"; do
         dnf install "$PAQ" -y

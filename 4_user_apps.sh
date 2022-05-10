@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Flatpack
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub fr.handbrake.ghb
+flatpak install flathub md.obsidian.Obsidian
+
 # Doom Emacs
 if [ -d ~/.emacs.d ]; then
     rm -Rf ~/.emacs.d
@@ -12,9 +17,9 @@ mkdir -p ~/.config/nvim
 git clone https://github.com/gastongmartinez/Nvim ~/.config/nvim
 
 # Anaconda
-wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh
-chmod +x Anaconda3-2021.11-Linux-x86_64.sh
-./Anaconda3-2021.11-Linux-x86_64.sh
+# wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh
+# chmod +x Anaconda3-2021.11-Linux-x86_64.sh
+# ./Anaconda3-2021.11-Linux-x86_64.sh
 
 # Jetbrains
 if [ ! -d ~/Apps ]; then
@@ -30,14 +35,14 @@ rm ideaIC-2022.1.tar.gz
 cd ~ || return
 
 # Android
-# cd ~/Apps || return
-# wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2021.1.1.20/android-studio-2021.1.1.23-linux.tar.gz
-# tar -xzf android-studio-2021.1.1.23-linux.tar.gz
-# rm android-studio-2021.1.1.23-linux.tar.gz
-# wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_2.10.4-stable.tar.xz
-# tar xf flutter_linux_2.10.4-stable.tar.xz
-# rm flutter_linux_2.10.4-stable.tar.xz
-# cd ~ || return
+cd ~/Apps || return
+wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2021.1.1.23/android-studio-2021.1.1.23-linux.tar.gz
+tar -xzf android-studio-2021.1.1.23-linux.tar.gz
+rm android-studio-2021.1.1.23-linux.tar.gz
+wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_2.10.5-stable.tar.xz
+tar xf flutter_linux_2.10.5-stable.tar.xz
+rm flutter_linux_2.10.5-stable.tar.xz
+cd ~ || return
 
 # Bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
