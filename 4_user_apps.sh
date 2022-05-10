@@ -4,6 +4,7 @@
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub fr.handbrake.ghb
 flatpak install flathub md.obsidian.Obsidian
+flatpak install flathub com.mattjakeman.ExtensionManager
 
 # Doom Emacs
 if [ -d ~/.emacs.d ]; then
