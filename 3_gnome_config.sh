@@ -24,7 +24,7 @@ rm JetBrainsMono.zip
 ############################################# Tema WhiteSur #################################################################################
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
 cd WhiteSur-gtk-theme || return
-./install.sh -c dark -c light -i fedora -N glassy
+./install.sh -l -i fedora -N glassy
 ./tweaks.sh -f
 sudo ./tweaks.sh -g -b "/usr/share/backgrounds/wallpapers/Landscapes/landscapes 01.jpg"
 cd ..
@@ -58,7 +58,8 @@ git clone https://github.com/Raayib/WhiteSur-Dark-ulauncher.git ~/.config/ulaunc
 
 ############################################## Extensiones ##################################################################################
 # Activar extensiones
-dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.org', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'quake-mode@repsac-by.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'Vitals@CoreCoding.com', 'systemd-manager@hardpixel.eu', 'tiling-assistant@leleat-on-github', 'tweaks-system-menu@extensions.gnome-shell.fifi.org', 'blur-my-shell@aunetx', 'no-overview@fthx', 'pop-shell@system76.com', 'dash-to-dock@micxgx.gmail.com', 'sound-output-device-chooser@kgshank.net']"
+dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.org', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'quake-mode@repsac-by.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'Vitals@CoreCoding.com', 'systemd-manager@hardpixel.eu', 'tiling-assistant@leleat-on-github', 'tweaks-system-menu@extensions.gnome-shell.fifi.org', 'blur-my-shell@aunetx', 'no-overview@fthx', 'pop-shell@system76.com', 'dash-to-dock@micxgx.gmail.com', 'sound-output-device-chooser@kgshank.net', 'caffeine@patapon.info']"
+dconf write /org/gnome/shell/disabled-extensions "['dash-to-panel@jderose9.github.com']"
 
 # ArcMenu
 dconf write /org/gnome/shell/extensions/arcmenu/available-placement "[true, false, false]"
@@ -104,8 +105,8 @@ dconf write /org/gnome/desktop/wm/preferences/button-layout "'appmenu:minimize,m
 dconf write /org/gnome/mutter/center-new-windows true
 
 # Tema
-dconf write /org/gnome/desktop/interface/gtk-theme "'WhiteSur-dark'"
-dconf write /org/gnome/shell/extensions/user-theme/name "'WhiteSur-dark'"
+dconf write /org/gnome/desktop/interface/gtk-theme "'WhiteSur-Dark'"
+dconf write /org/gnome/shell/extensions/user-theme/name "'WhiteSur-Dark'"
 dconf write /org/gnome/desktop/interface/cursor-theme "'WhiteSur-cursors'"
 dconf write /org/gnome/desktop/interface/icon-theme "'WhiteSur-grey-dark'"
 
