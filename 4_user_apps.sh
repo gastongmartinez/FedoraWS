@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
 
-# Flatpack
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub fr.handbrake.ghb
-flatpak install flathub md.obsidian.Obsidian
-flatpak install flathub com.mattjakeman.ExtensionManager
+# Flatpak
+# flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# flatpak install flathub fr.handbrake.ghb
+# flatpak install flathub md.obsidian.Obsidian
+# flatpak install flathub com.mattjakeman.ExtensionManager
+
+flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak --user install flathub fr.handbrake.ghb -y
+flatpak --user install flathub md.obsidian.Obsidian -y
+flatpak --user install flathub com.mattjakeman.ExtensionManager -y
 
 # Doom Emacs
 if [ -d ~/.emacs.d ]; then
