@@ -69,6 +69,7 @@ USER=$(grep "1000" /etc/passwd | awk -F : '{ print $1 }')
 PAQUETES=(
     #### Powermanagement ####
     'tlp'
+    'tlp-rdw'
     'powertop'
 
     #### Gnome ####
