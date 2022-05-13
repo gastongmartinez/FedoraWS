@@ -140,6 +140,7 @@ PAQUETES=(
     'elementary-terminal'
     'stacer'
     'timeshift'
+    'setroubleshoot'
 
     #### Multimedia ####
     'elementary-music'
@@ -282,28 +283,6 @@ fi
 
 sed -i "s/Icon=\/var\/lib\/AccountsService\/icons\/$USER/Icon=\/usr\/share\/backgrounds\/wallpapers\/Fringe\/fibonacci3.jpg/g" "/var/lib/AccountsService/users/$USER"
 
-#################################################################################
-read -rp "Instalar XFCE? (S/N): " XFCE
-if [ "$XFCE" == 'S' ]; then
-    dnf install @xfce-desktop-environment -y
-fi
-#################################################################################
-
-#################################################################################
-read -rp "Instalar Mate? (S/N): " MT
-if [ "$MT" == 'S' ]; then
-    dnf install @mate-desktop -y
-    dnf install @mate-applications -y
-fi
-#################################################################################
-
-#################################################################################
-read -rp "Instalar KDE? (S/N): " KDE
-if [ "$KDE" == 'S' ]; then
-    dnf install @kde-desktop -y
-fi
-#################################################################################
-
 ################################## WM ######################################
 read -rp "Instalar Window Managers? (S/N): " AW
 if [ "$AW" == 'S' ]; then
@@ -316,11 +295,35 @@ if [ "$AW" == 'S' ]; then
         'feh'
         'picom'
         'lxappearance'
+        'python3-cffi'
+        'python3-xcffib'
+        'python3-cairocffi'
+        'pango'
+        'python3-dbus-next'
+        'xorg-x11-server-Xephyr'
+        'python3-pyvirtualdisplay'
     )
     for PAQ in "${AWPAQ[@]}"; do
         dnf install "$PAQ" -y
     done
     sed -i 's/Name=awesome/Name=Awesome/g' "/usr/share/xsessions/awesome.desktop"
+
+    pip install --no-cache-dir cairocffi
+
+    git clone https://github.com/qtile/qtile.git
+    cd qtile || return
+    pip install .
+    cd ..
+    rm -rf qtile
+    
+    {
+        echo '[Desktop Entry]'
+        echo 'Name=Qtile'
+        echo 'Comment=A hackable tiling window manager written and configured in Python'
+        echo 'TryExec=qtile'
+        echo 'Exec=qtile start'
+        echo 'Type=Application'
+    } > /usr/share/xsessions/qtile.desktop
 fi
 #################################################################################
 
