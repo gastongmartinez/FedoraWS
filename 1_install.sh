@@ -125,7 +125,7 @@ PAQUETES=(
     'emacs'
     'util-linux-user'
     'flameshot'
-    'ktouch'
+    'klavaro'
     'fd-find'
     'fzf'
     'the_silver_searcher'
@@ -332,6 +332,11 @@ git clone https://github.com/vinceliuice/grub2-themes.git
 cd grub2-themes || return
 ./install.sh
 #################################################################################
+
+read -rp "Modificar fstab? (S/N): " FST
+if [ "$FST" == 'S' ]; then
+    sed -i 's/subvol=@/compress=zstd,noatime,space_cache=v2,ssd,discard=async,subvol=@/g' "/etc/fstab"
+fi
 
 alternatives --set java java-1.8.0-openjdk.x86_64
 
