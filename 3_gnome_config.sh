@@ -91,6 +91,7 @@ dconf write /org/gnome/shell/extensions/pop-shell/active-hint false
 dconf write /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size 32
 dconf write /org/gnome/shell/extensions/dash-to-dock/show-apps-at-top true
 dconf write /org/gnome/shell/extensions/dash-to-dock/apply-custom-theme true
+dconf write /org/gnome/shell/extensions/blur-my-shell/dash-to-dock/blur false
 
 # Sound Input & Output Device Chooser
 dconf write /org/gnome/shell/extensions/sound-output-device-chooser/integrate-with-slider true
@@ -129,9 +130,14 @@ dconf write /org/gnome/nautilus/icon-view/default-zoom-level "'small'"
 dconf write /org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-timeout 7200
 # En 30 minutos con bateria
 dconf write /org/gnome/settings-daemon/plugins/power/sleep-inactive-battery-timeout 1800
-#############################################################################################################################################
 
+# Ulauncher
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Control>space'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'ulauncher-toggle'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'Ulauncher'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
 sed -i "s/\"theme-name\": \"light\"/\"theme-name\": \"WhiteSur-Dark\"/g" "$HOME/.config/ulauncher/settings.json"
+#############################################################################################################################################
 
 sleep 5
 
