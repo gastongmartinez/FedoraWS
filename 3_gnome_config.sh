@@ -131,6 +131,8 @@ dconf write /org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-timeout 7
 dconf write /org/gnome/settings-daemon/plugins/power/sleep-inactive-battery-timeout 1800
 #############################################################################################################################################
 
-sleep 2
+sed -i "s/\"theme-name\": \"light\"/\"theme-name\": \"WhiteSur-Dark\"/g" "$HOME/.config/ulauncher/settings.json"
+
+sleep 5
 
 reboot
