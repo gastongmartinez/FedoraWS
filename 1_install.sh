@@ -112,6 +112,7 @@ PAQUETES=(
     'autofs'
 
     #### Sistema ####
+    'lsd'
     'p7zip'
     'unrar'
     'alacritty'
