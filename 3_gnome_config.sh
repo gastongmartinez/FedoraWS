@@ -136,7 +136,7 @@ dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/cus
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'ulauncher-toggle'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'Ulauncher'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
-sed -i "s/\"theme-name\": \"light\"/\"theme-name\": \"WhiteSur-Dark\"/g" "$HOME/.config/ulauncher/settings.json"
+sed -i "s/\"theme-name\": \"light\"/\"theme-name\": \"WhiteSur-dark\"/g" "$HOME/.config/ulauncher/settings.json"
 #############################################################################################################################################
 
 sleep 5
