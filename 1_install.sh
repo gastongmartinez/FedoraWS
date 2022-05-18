@@ -278,6 +278,11 @@ fi
 read -rp "Instalar Cockpit? (S/N): " CKP
 if [ "$CKP" == 'S' ]; then
     dnf install cockpit -y
+    dnf install cockpit-sosreport -y
+    dnf install cockpit-machines -y
+    dnf install cockpit-podman -y
+    dnf install cockpit-selinux -y
+    dnf install cockpit-navigator -y
     systemctl enable --now cockpit.socket
     firewall-cmd --add-service=cockpit
     firewall-cmd --add-service=cockpit --permanent
