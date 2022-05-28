@@ -61,6 +61,7 @@ dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86
 rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 # CORP
+dnf copr enable frostyx/qtile -y
 dnf copr enable atim/lazygit -y
 
 USER=$(grep "1000" /etc/passwd | awk -F : '{ print $1 }')
@@ -295,7 +296,7 @@ sed -i "s/Icon=\/var\/lib\/AccountsService\/icons\/$USER/Icon=\/usr\/share\/back
 read -rp "Instalar Window Managers? (S/N): " AW
 if [ "$AW" == 'S' ]; then
     AWPAQ=(
-        #'qtile'
+        'qtile'
         'awesome'
         'dmenu'
         'rofi'
@@ -303,35 +304,12 @@ if [ "$AW" == 'S' ]; then
         'feh'
         'picom'
         'lxappearance'
-        'python3-cffi'
-        'python3-xcffib'
-        'python3-cairocffi'
-        'pango'
-        'python3-dbus-next'
         'xorg-x11-server-Xephyr'
-        'python3-pyvirtualdisplay'
     )
     for PAQ in "${AWPAQ[@]}"; do
         dnf install "$PAQ" -y
     done
     sed -i 's/Name=awesome/Name=Awesome/g' "/usr/share/xsessions/awesome.desktop"
-
-    pip install --no-cache-dir cairocffi
-
-    git clone https://github.com/qtile/qtile.git
-    cd qtile || return
-    pip install .
-    cd ..
-    rm -rf qtile
-    
-    {
-        echo '[Desktop Entry]'
-        echo 'Name=Qtile'
-        echo 'Comment=A hackable tiling window manager written and configured in Python'
-        echo 'TryExec=qtile'
-        echo 'Exec=qtile start'
-        echo 'Type=Application'
-    } > /usr/share/xsessions/qtile.desktop
 fi
 #################################################################################
 
