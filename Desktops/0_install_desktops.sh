@@ -38,7 +38,7 @@ fi
 #################################################################################
 
 #################################################################################
-read -rp "Instalar KDE? (S/N): " DEEP
+read -rp "Instalar Deepin? (S/N): " DEEP
 if [ "$DEEP" == 'S' ]; then
     dnf group install "Deepin Desktop" -y
 fi
