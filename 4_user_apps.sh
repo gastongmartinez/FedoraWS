@@ -26,24 +26,11 @@ git clone https://github.com/gastongmartinez/Nvim ~/.config/nvim
 # chmod +x Anaconda3-2021.11-Linux-x86_64.sh
 # ./Anaconda3-2021.11-Linux-x86_64.sh
 
-# Jetbrains
+# Android
 if [ ! -d ~/Apps ]; then
     mkdir ~/Apps
 fi
-# cd ~/Apps || return
-# wget https://download.jetbrains.com/python/pycharm-community-2022.1.1.tar.gz
-# wget https://download.jetbrains.com/idea/ideaIC-2022.1.1.tar.gz
-# tar -xzf pycharm-community-2022.1.1.tar.gz
-# tar -xzf ideaIC-2022.1.1.tar.gz
-# rm pycharm-community-2022.1.1.tar.gz
-# rm ideaIC-2022.1.1.tar.gz
-# cd ~ || return
-
-# Android
-# cd ~/Apps || return
-# wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2021.2.1.14/android-studio-2021.2.1.14-linux.tar.gz
-# tar -xzf android-studio-2021.2.1.14-linux.tar.gz
-# rm android-studio-2021.2.1.14-linux.tar.gz
+cd ~/Apps || return
 wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.0.1-stable.tar.xz
 tar xf flutter_linux_3.0.1-stable.tar.xz
 rm flutter_linux_3.0.1-stable.tar.xz
