@@ -63,6 +63,7 @@ rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 # CORP
 dnf copr enable frostyx/qtile -y
 dnf copr enable atim/lazygit -y
+dnf copr enable dawid/better_fonts -y
 
 USER=$(grep "1000" /etc/passwd | awk -F : '{ print $1 }')
 
@@ -185,11 +186,30 @@ PAQUETES=(
     'npm'
     'yarnpkg'
     'lazygit'
+
+    #### Fuentes ####
+    'terminus-fonts'
+    'fontawesome-fonts'
+    'cascadia-code-fonts'
+    'texlive-roboto'
+    'dejavu-fonts-all'
+    'powerline-fonts'
+    'fira-code-fonts'
+    'cabextract'
+    'xorg-x11-font-utils'
+    'fontconfig'
+    'google-carlito-fonts'
+    'texlive-caladea'
+    'fontforge'
+    'fontconfig-font-replacements'
+    'fontconfig-enhanced-defaults'
 )
  
 for PAQ in "${PAQUETES[@]}"; do
     dnf install "$PAQ" -y
 done
+
+rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 ###############################################################################
 
 ########################## Virtualizacion #####################################
@@ -211,35 +231,6 @@ if [ "$VIRT" == 'S' ]; then
     done
     usermod -aG libvirt "$USER"
     usermod -aG kvm "$USER"
-fi
-################################################################################
-
-################################# Fuentes ######################################
-read -rp "Instalar fuentes adicionales? (S/N): " FT
-if [ "$FT" == 'S' ]; then
-    FUENTES=(
-        'terminus-fonts'
-        'fontawesome-fonts'
-        'cascadia-code-fonts'
-        'texlive-roboto'
-        'dejavu-fonts-all'
-        'powerline-fonts'
-        'fira-code-fonts'
-        'cabextract'
-        'xorg-x11-font-utils'
-        'fontconfig'
-        'google-carlito-fonts'
-        'texlive-caladea'
-        'fontforge'
-    )
-    for F in "${FUENTES[@]}"; do
-        dnf install "$F" -y
-    done
-    rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
-
-    #dnf copr enable dawid/better_fonts -y
-    #dnf install fontconfig-font-replacements -y
-    #dnf install fontconfig-enhanced-defaults -y
 fi
 ################################################################################
 
