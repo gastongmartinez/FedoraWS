@@ -33,7 +33,6 @@ if [ "$KDE" == 'S' ]; then
     dnf install yakuake -y
     dnf install kcolorchooser -y
     dnf install kalarm -y
-    dnf install artikulate -y
 fi
 #################################################################################
 
