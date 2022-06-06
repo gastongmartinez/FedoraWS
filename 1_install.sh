@@ -119,6 +119,7 @@ PAQUETES=(
     'p7zip'
     'unrar'
     'alacritty'
+    'kitty'
     'htop'
     'bpytop'
     'neofetch'
