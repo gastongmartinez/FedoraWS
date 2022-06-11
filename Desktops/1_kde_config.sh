@@ -332,10 +332,10 @@ kwriteconfig5 --file "$HOME"/.config/powermanagementprofilesrc --group AC --grou
 #     echo '@define-color warning_color_insensitive_breeze #683d16;'
 # } > "$HOME"/.config/gtk-3.0/colors.css
 
-sed -i "s/gtk-icon-theme-name=breeze-dark/gtk-icon-theme-name=WhiteSur-grey-dark/g" "$HOME/.config/gtk-3.0/settings.ini"
-sed -i "s/gtk-font-name=Noto Sans,  10/gtk-font-name=Noto Sans,  11/g" "$HOME/.config/gtk-3.0/settings.ini"
-sed -i "s/gtk-icon-theme-name=breeze-dark/gtk-icon-theme-name=WhiteSur-grey-dark/g" "$HOME/.config/gtk-4.0/settings.ini"
-sed -i "s/gtk-font-name=Noto Sans,  10/gtk-font-name=Noto Sans,  11/g" "$HOME/.config/gtk-4.0/settings.ini"
+# sed -i "s/gtk-icon-theme-name=breeze-dark/gtk-icon-theme-name=WhiteSur-grey-dark/g" "$HOME/.config/gtk-3.0/settings.ini"
+# sed -i "s/gtk-font-name=Noto Sans,  10/gtk-font-name=Noto Sans,  11/g" "$HOME/.config/gtk-3.0/settings.ini"
+# sed -i "s/gtk-icon-theme-name=breeze-dark/gtk-icon-theme-name=WhiteSur-grey-dark/g" "$HOME/.config/gtk-4.0/settings.ini"
+# sed -i "s/gtk-font-name=Noto Sans,  10/gtk-font-name=Noto Sans,  11/g" "$HOME/.config/gtk-4.0/settings.ini"
 sed -i "s/org.kde.breezedark.desktop/com.github.vinceliuice.WhiteSur-dark/g" "$HOME/.config/kdedefaults/package"
 # sed -i "s/\"theme-name\": \"light\"/\"theme-name\": \"WhiteSur-Dark\"/g" "$HOME/.config/ulauncher/settings.json"
 sed -i "s/Net\/IconThemeName \"breeze-dark\"/Net\/IconThemeName \"WhiteSur-grey-dark\"/g" "$HOME/.config/xsettingsd/xsettingsd.conf"
