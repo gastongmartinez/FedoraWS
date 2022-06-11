@@ -32,9 +32,9 @@ if [ ! -d ~/Apps ]; then
     mkdir ~/Apps
 fi
 cd ~/Apps || return
-wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.0.1-stable.tar.xz
-tar xf flutter_linux_3.0.1-stable.tar.xz
-rm flutter_linux_3.0.1-stable.tar.xz
+wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.0.2-stable.tar.xz
+tar xf flutter_linux_3.0.2-stable.tar.xz
+rm flutter_linux_3.0.2-stable.tar.xz
 cd ~ || return
 
 # Bash
