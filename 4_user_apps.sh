@@ -15,10 +15,15 @@ flatpak --user install flathub net.ankiweb.Anki -y
 if [ -d ~/.emacs.d ]; then
     rm -Rf ~/.emacs.d
 fi
+go install golang.org/x/tools/gopls@latest
+go install github.com/fatih/gomodifytags@latest
+go install github.com/cweill/gotests@latest
+pip install nose
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
 sleep 5
 rm -rf ~/.doom.d
+sudo npm -g install stylelint js-beautify
 sudo cp /usr/share/applications/emacs.desktop /usr/share/applications/emacsClient.desktop
 sudo sed -i "s/Name=Emacs/Name=Emacs Client/g" "/usr/share/applications/emacsClient.desktop"
 sudo sed -i "s/Exec=emacs/Exec=emacsclient -c -a 'emacs'/g" "/usr/share/applications/emacsClient.desktop" 
