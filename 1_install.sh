@@ -136,6 +136,8 @@ PAQUETES=(
     'fzf'
     'the_silver_searcher'
     'libreoffice-langpack-es'
+    'qalculate'
+    'qalculate-gtk'
     'foliate'
     'aspell'
     'pandoc'
