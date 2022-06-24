@@ -51,6 +51,13 @@ cd ~ || return
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 sed -i 's/"font"/"powerline"/g' "$HOME/.bashrc"
 
+# Autostart Apps
+if [ ! -d ~/.config/autostart ]; then
+    mkdir -p ~/.config/autostart
+fi
+# cp /usr/share/applications/plank.desktop ~/.config/autostart/
+cp /usr/share/applications/ulauncher.desktop ~/.config/autostart/
+
 # ZSH
 if [ ! -d ~/.local/share/zsh ]; then
     mkdir ~/.local/share/zsh
@@ -73,4 +80,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.local/share/
     echo 'export PATH="$HOME/anaconda3/bin:$HOME/Apps/flutter/bin:$HOME/.local/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/.emacs.d/bin:$PATH"'
 } >>~/.zshrc
 chsh -s /usr/bin/zsh
+
+sleep 5
+
+reboot
 

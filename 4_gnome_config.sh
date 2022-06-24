@@ -44,13 +44,6 @@ rm -rf WhiteSur-icon-theme
 rm -rf WhiteSur-cursors
 #############################################################################################################################################
 
-# Autostart Apps
-if [ ! -d ~/.config/autostart ]; then
-    mkdir -p ~/.config/autostart
-fi
-# cp /usr/share/applications/plank.desktop ~/.config/autostart/
-cp /usr/share/applications/ulauncher.desktop ~/.config/autostart/
-
 # Tema Ulauncher
 mkdir -p ~/.config/ulauncher/user-themes
 git clone https://github.com/Raayib/WhiteSur-Dark-ulauncher.git ~/.config/ulauncher/user-themes/WhiteSur-Dark-ulauncher
