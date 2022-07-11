@@ -10,6 +10,7 @@ flatpak --user install flathub com.jetbrains.IntelliJ-IDEA-Community -y
 flatpak --user install flathub com.google.AndroidStudio -y
 flatpak --user install flathub io.github.shiftey.Desktop -y
 flatpak --user install flathub net.ankiweb.Anki -y
+flatpak --user install flathub com.github.marktext.marktext -y
 
 # Doom Emacs
 if [ -d ~/.emacs.d ]; then
