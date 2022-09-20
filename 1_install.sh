@@ -61,7 +61,7 @@ dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86
 rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 # CORP
-dnf copr enable frostyx/qtile -y
+# dnf copr enable frostyx/qtile -y
 dnf copr enable atim/lazygit -y
 dnf copr enable dawid/better_fonts -y
 
@@ -294,7 +294,7 @@ sed -i "s/Icon=\/var\/lib\/AccountsService\/icons\/$USER/Icon=\/usr\/share\/back
 read -rp "Instalar Window Managers? (S/N): " AW
 if [ "$AW" == 'S' ]; then
     AWPAQ=(
-        'qtile'
+        #'qtile'
         'awesome'
         'dmenu'
         'rofi'
