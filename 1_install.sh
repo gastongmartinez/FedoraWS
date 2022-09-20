@@ -56,8 +56,9 @@ sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.micros
 dnf check-update
 
 # Brave
-dnf install dnf-plugins-core -y
-dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
+# dnf install dnf-plugins-core -y
+# dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
+sh -c 'echo -e "[brave-browser-rpm-release.s3.brave.com_x86_64_]\nname=created by dnf config-manager from https://brave-browser-rpm-release.s3.brave.com/x86_64/\nbaseurl=https://brave-browser-rpm-release.s3.brave.com/x86_64/\nenabled=1" > /etc/yum.repos.d/brave-browser-rpm-release.s3.brave.com_x86_64_.repo'
 rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 # CORP
