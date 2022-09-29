@@ -134,6 +134,11 @@ dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "['
 sed -i "s/\"theme-name\": \"light\"/\"theme-name\": \"WhiteSur-dark\"/g" "$HOME/.config/ulauncher/settings.json"
 #############################################################################################################################################
 
+#############################################################################################################################################
+flatpak --user override --filesystem="$HOME"/.themes
+flatpak --user override --env=GTK_THEME=WhiteSur-Dark
+#############################################################################################################################################
+
 sleep 5
 
 reboot
