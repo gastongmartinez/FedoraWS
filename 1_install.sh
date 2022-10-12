@@ -117,6 +117,7 @@ PAQUETES=(
 
     #### Sistema ####
     'lsd'
+    'corectrl'
     'p7zip'
     'unrar'
     'alacritty'
