@@ -56,12 +56,12 @@ cd "$DIRE" || return
 rm -rf Tiling-Assistant
 
 # Tweaks and Extensions in System Menu
-git clone https://github.com/F-i-f/tweaks-system-menu.git
-cd tweaks-system-menu || return
-meson build
-ninja -C build install
-cd "$DIRE" || return
-rm -rf tweaks-system-menu
+# git clone https://github.com/F-i-f/tweaks-system-menu.git
+# cd tweaks-system-menu || return
+# meson build
+# ninja -C build install
+# cd "$DIRE" || return
+# rm -rf tweaks-system-menu
 
 # Quake-Mode
 git clone https://github.com/repsac-by/gnome-shell-extension-quake-mode.git

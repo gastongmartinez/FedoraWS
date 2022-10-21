@@ -85,7 +85,7 @@ PAQUETES=(
     'gnome-shell-extension-no-overview'
     'gnome-shell-extension-pop-shell'
     'gnome-shell-extension-caffeine'
-    'gnome-shell-extension-sound-output-device-chooser'
+    #'gnome-shell-extension-sound-output-device-chooser'
     'gnome-commander'
     'file-roller-nautilus'
 
