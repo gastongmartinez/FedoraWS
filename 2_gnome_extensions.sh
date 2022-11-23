@@ -55,6 +55,10 @@ chmod +x build.sh
 cd "$DIRE" || return
 rm -rf Tiling-Assistant
 
+# Time++
+git clone https://github.com/zagortenay333/timepp.git
+mv timepp ~/.local/share/gnome-shell/extensions/timepp@zagortenay333
+
 # Tweaks and Extensions in System Menu
 # git clone https://github.com/F-i-f/tweaks-system-menu.git
 # cd tweaks-system-menu || return
