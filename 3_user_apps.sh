@@ -5,9 +5,9 @@ flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flath
 flatpak --user install flathub fr.handbrake.ghb -y
 flatpak --user install flathub md.obsidian.Obsidian -y
 flatpak --user install flathub com.mattjakeman.ExtensionManager -y
-flatpak --user install flathub com.jetbrains.PyCharm-Community -y
-flatpak --user install flathub com.jetbrains.IntelliJ-IDEA-Community -y
-flatpak --user install flathub com.google.AndroidStudio -y
+# flatpak --user install flathub com.jetbrains.PyCharm-Community -y
+# flatpak --user install flathub com.jetbrains.IntelliJ-IDEA-Community -y
+# flatpak --user install flathub com.google.AndroidStudio -y
 flatpak --user install flathub io.github.shiftey.Desktop -y
 flatpak --user install flathub net.ankiweb.Anki -y
 flatpak --user install flathub com.github.marktext.marktext -y
@@ -38,18 +38,39 @@ mkdir -p ~/.config/nvim
 git clone https://github.com/gastongmartinez/Nvim ~/.config/nvim
 
 # Anaconda
-# wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh
-# chmod +x Anaconda3-2021.11-Linux-x86_64.sh
-# ./Anaconda3-2021.11-Linux-x86_64.sh
+wget https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh
+chmod +x Anaconda3-2022.10-Linux-x86_64.sh
+./Anaconda3-2022.10-Linux-x86_64.sh
+
+# Jetbrains
+if [ ! -d ~/Apps ]; then
+    mkdir ~/Apps
+fi
+cd ~/Apps || return
+wget https://download.jetbrains.com/python/pycharm-professional-2022.3.tar.gz
+wget https://download.jetbrains.com/datagrip/datagrip-2022.3.1.tar.gz
+wget https://download.jetbrains.com/cpp/CLion-2022.3.tar.gz
+tar -xzf pycharm-professional-2022.3.tar.gz
+tar -xzf datagrip-2022.3.1.tar.gz
+tar -xzf CLion-2022.3.tar.gz
+rm pycharm-professional-2022.3.tar.gz
+rm datagrip-2022.3.1.tar.gz
+rm CLion-2022.3.tar.gz
+cd ~ || return
+
 
 # Android
 if [ ! -d ~/Apps ]; then
     mkdir ~/Apps
 fi
 cd ~/Apps || return
-wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.3.2-stable.tar.xz
-tar xf flutter_linux_3.3.2-stable.tar.xz
-rm flutter_linux_3.3.2-stable.tar.xz
+wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2021.3.1.17/android-studio-2021.3.1.17-linux.tar.gz
+tar -xzf android-studio-2021.3.1.17-linux.tar.gz
+rm android-studio-2021.3.1.17-linux.tar.gz
+cd ~/Apps || return
+wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.3.9-stable.tar.xz
+tar xf flutter_linux_3.3.9-stable.tar.xz
+rm flutter_linux_3.3.9-stable.tar.xz
 cd ~ || return
 
 # Bash
