@@ -280,7 +280,11 @@ if [ "$PGS" == 'S' ]; then
     postgresql-setup --initdb --unit postgresql
     # systemctl enable postgresql.service
 
-    dnf install mariadb-server-utils -y
+    # dnf install mariadb-server-utils -y
+    dnf install community-mysql-server -y
+    rpm -i https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-8.0.31-1.fc37.x86_64.rpm
+
+    dnf install sqlite -y
 fi
 #################################################################################
 
