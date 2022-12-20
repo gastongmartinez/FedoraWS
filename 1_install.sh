@@ -51,8 +51,12 @@ dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-"$(
 dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-"$(rpm -E %fedora)".noarch.rpm -y
 
 # MESA
-dnf swap mesa-va-drivers mesa-va-drivers-freeworld -y
-dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld -y
+read -rp "Cambiar drivers de video a MESA Freeworld? (S/N): " MESA
+if [ "$MESA" == 'S' ]; 
+then
+    dnf swap mesa-va-drivers mesa-va-drivers-freeworld -y
+    dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld -y
+fi
 
 # Repositorio VSCode
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
