@@ -204,6 +204,7 @@ PAQUETES=(
     'npm'
     'yarnpkg'
     'lazygit'
+    'pcre-cpp'
 
     #### Fuentes ####
     'terminus-fonts'
