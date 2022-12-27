@@ -156,7 +156,6 @@ PAQUETES=(
     'ulauncher'
     'rsync'
     'dnfdragora'
-    'elementary-terminal'
     'stacer'
     'timeshift'
     'setroubleshoot'
