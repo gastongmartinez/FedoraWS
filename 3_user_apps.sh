@@ -34,8 +34,11 @@ sudo sed -i "s/Name=Emacs/Name=Emacs Client/g" "/usr/share/applications/emacsCli
 sudo sed -i "s/Exec=emacs/Exec=emacsclient -c -a 'emacs'/g" "/usr/share/applications/emacsClient.desktop" 
 
 # NeoVim
-mkdir -p ~/.config/nvim
-git clone https://github.com/gastongmartinez/Nvim ~/.config/nvim
+# mkdir -p ~/.config/nvim
+# git clone https://github.com/gastongmartinez/Nvim ~/.config/nvim
+
+# Tmux Plugin Manager
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 
 # Anaconda
 wget https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh
