@@ -164,7 +164,7 @@ PAQUETES=(
     'setroubleshoot'
 
     #### Multimedia ####
-    'elisa-player'
+    #'elisa-player'
     'vlc'
     'python-vlc'
     'mpv'
