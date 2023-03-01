@@ -13,6 +13,7 @@ flatpak --user install flathub net.ankiweb.Anki -y
 flatpak --user install flathub com.github.marktext.marktext -y
 flatpak --user install flathub com.rafaelmardojai.Blanket -y
 flatpak --user install flathub com.github.tchx84.Flatseal -y
+flatpak --user install flathub com.github.neithern.g4music -y
 
 # Doom Emacs
 if [ -d ~/.emacs.d ]; then
