@@ -78,6 +78,7 @@ dnf config-manager --add-repo https://rpm.librewolf.net/librewolf-repo.repo
 dnf copr enable frostyx/qtile -y
 dnf copr enable atim/lazygit -y
 dnf copr enable dawid/better_fonts -y
+dnf copr enable varlad/helix -y
 
 USER=$(grep "1000" /etc/passwd | awk -F : '{ print $1 }')
 
@@ -132,6 +133,7 @@ PAQUETES=(
     'autofs'
 
     #### Sistema ####
+    'helix'
     'lsd'
     'corectrl'
     'p7zip'
