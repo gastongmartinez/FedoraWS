@@ -111,6 +111,9 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.local/share/
 } >>~/.zshrc
 chsh -s /usr/bin/zsh
 
+cargo install taplo-cli --locked
+sudo npm install -g dockerfile-language-server-nodejs
+
 sleep 5
 
 reboot

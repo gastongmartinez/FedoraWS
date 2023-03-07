@@ -206,6 +206,7 @@ PAQUETES=(
     'cargo'
     'rust-analyzer'
     'java-1.8.0-openjdk'
+    'lldb'
     #'java-latest-openjdk'
     'code'
     'tidy'
