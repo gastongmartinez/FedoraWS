@@ -204,6 +204,7 @@ PAQUETES=(
     'golang'
     'rust'
     'cargo'
+    'rust-analyzer'
     'java-1.8.0-openjdk'
     #'java-latest-openjdk'
     'code'
