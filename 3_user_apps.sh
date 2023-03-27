@@ -59,15 +59,15 @@ if [ ! -d ~/Apps ]; then
     mkdir ~/Apps
 fi
 # cd ~/Apps || return
-# wget https://download.jetbrains.com/python/pycharm-professional-2022.3.tar.gz
-# wget https://download.jetbrains.com/datagrip/datagrip-2022.3.1.tar.gz
-# wget https://download.jetbrains.com/cpp/CLion-2022.3.tar.gz
-# tar -xzf pycharm-professional-2022.3.tar.gz
-# tar -xzf datagrip-2022.3.1.tar.gz
-# tar -xzf CLion-2022.3.tar.gz
-# rm pycharm-professional-2022.3.tar.gz
-# rm datagrip-2022.3.1.tar.gz
-# rm CLion-2022.3.tar.gz
+# wget https://download.jetbrains.com/python/pycharm-professional-2022.3.3.tar.gz
+# wget https://download.jetbrains.com/datagrip/datagrip-2022.3.3.tar.gz
+##### wget https://download.jetbrains.com/cpp/CLion-2022.3.tar.gz
+# tar -xzf pycharm-professional-2022.3.3.tar.gz
+# tar -xzf datagrip-2022.3.3.tar.gz
+##### tar -xzf CLion-2022.3.tar.gz
+# rm pycharm-professional-2022.3.3.tar.gz
+# rm datagrip-2022.3.3.tar.gz
+##### rm CLion-2022.3.tar.gz
 # cd ~ || return
 
 
