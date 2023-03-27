@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-mac -o ~/.local/bin/rust-analyzer
+chmod +x ~/.local/bin/rust-analyzer
+
 # Flatpak
 flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak --user install flathub fr.handbrake.ghb -y
