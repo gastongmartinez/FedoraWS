@@ -55,26 +55,6 @@ chmod +x build.sh
 cd "$DIRE" || return
 rm -rf Tiling-Assistant
 
-# Time++
-# git clone https://github.com/zagortenay333/timepp.git
-# mv timepp ~/.local/share/gnome-shell/extensions/timepp@zagortenay333
-
-# Tweaks and Extensions in System Menu
-# git clone https://github.com/F-i-f/tweaks-system-menu.git
-# cd tweaks-system-menu || return
-# meson build
-# ninja -C build install
-# cd "$DIRE" || return
-# rm -rf tweaks-system-menu
-
-# Quake-Mode
-# git clone https://github.com/repsac-by/gnome-shell-extension-quake-mode.git
-# cd gnome-shell-extension-quake-mode || return
-# gnome-extensions pack quake-mode@repsac-by.github.com --extra-source={quakemodeapp,util}.js
-# gnome-extensions install quake-mode@repsac-by.github.com.shell-extension.zip
-# cd "$DIRE" || return
-# rm -rf gnome-shell-extension-quake-mode
-
 # Removable Drive
 git clone https://gitlab.gnome.org/GNOME/gnome-shell-extensions.git
 cd gnome-shell-extensions || return

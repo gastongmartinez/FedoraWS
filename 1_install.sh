@@ -96,7 +96,6 @@ PAQUETES=(
     'gnome-shell-extension-no-overview'
     'gnome-shell-extension-pop-shell'
     'gnome-shell-extension-caffeine'
-    'gnome-shell-extension-openweather'
     'gnome-commander'
     'file-roller-nautilus'
 
