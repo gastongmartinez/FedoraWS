@@ -42,7 +42,6 @@ git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
 sleep 5
 rm -rf ~/.doom.d
-sudo npm -g install stylelint js-beautify
 # sudo cp /usr/share/applications/emacs.desktop /usr/share/applications/emacsClient.desktop
 # sudo sed -i "s/Name=Emacs/Name=Emacs Client/g" "/usr/share/applications/emacsClient.desktop"
 # sudo sed -i "s/Exec=emacs/Exec=emacsclient -c -a 'emacs'/g" "/usr/share/applications/emacsClient.desktop" 
