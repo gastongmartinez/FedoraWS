@@ -75,7 +75,6 @@ dnf config-manager --add-repo https://rpm.librewolf.net/librewolf-repo.repo
 # CORP
 dnf copr enable frostyx/qtile -y
 dnf copr enable atim/lazygit -y
-dnf copr enable dawid/better_fonts -y
 dnf copr enable varlad/helix -y
 
 USER=$(grep "1000" /etc/passwd | awk -F : '{ print $1 }')
@@ -113,7 +112,6 @@ PAQUETES=(
     'zsh'
     'zsh-autosuggestions'
     'zsh-syntax-highlighting'
-    'bash-completion'
     'dialog'
     'autojump'
     'autojump-zsh'
@@ -124,7 +122,6 @@ PAQUETES=(
     'mc'
     'thunar'
     'vifm'
-    'meld'
     'stow'
     'ripgrep'
     'autofs'
@@ -153,7 +150,6 @@ PAQUETES=(
     'fd-find'
     'fzf'
     'the_silver_searcher'
-    'libreoffice-langpack-es'
     'qalculate'
     'qalculate-gtk'
     'foliate'
@@ -161,7 +157,6 @@ PAQUETES=(
     'pandoc'
     'dconf-editor'
     'ulauncher'
-    'rsync'
     'dnfdragora'
     'stacer'
     'timeshift'
@@ -204,7 +199,6 @@ PAQUETES=(
     'code'
     'tidy'
     'nodejs'
-    'npm'
     'yarnpkg'
     'lazygit'
     'pcre-cpp'
@@ -215,16 +209,11 @@ PAQUETES=(
     'cascadia-code-fonts'
     'texlive-roboto'
     'dejavu-fonts-all'
-    'powerline-fonts'
     'fira-code-fonts'
     'cabextract'
     'xorg-x11-font-utils'
-    'fontconfig'
-    'google-carlito-fonts'
     'texlive-caladea'
     'fontforge'
-    'fontconfig-font-replacements'
-    'fontconfig-enhanced-defaults'
 
     ### Bases de datos ###
     'postgresql-server'
@@ -286,7 +275,6 @@ if [ "$AW" == 'S' ]; then
         'jgmenu'
         'i3lock'
         'sway'
-        'sway-wallpapers'
         'grimshot'
         'waybar'
         'wofi'
