@@ -242,6 +242,12 @@ PAQUETES=(
     'cockpit-podman'
     'cockpit-selinux'
     'cockpit-navigator'
+
+    ### Virtualizacion ###
+    'virt-manager'
+    'ebtables-services'
+    'bridge-utils'
+    'libguestfs'
 )
  
 for PAQ in "${PAQUETES[@]}"; do
@@ -251,28 +257,6 @@ done
 rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 rpm -i https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-8.0.31-1.fc37.x86_64.rpm
 ###############################################################################
-
-########################## Virtualizacion #####################################
-read -rp "Instalar virtualizacion? (S/N): " VIRT
-if [ "$VIRT" == 'S' ]; then
-    VIRTPKGS=(
-        'virt-manager'
-        'qemu-kvm'
-        'libvirt-client'
-        'edk2-ovmf'
-        'ebtables-services'
-        'dnsmasq'
-        'bridge-utils'
-        'uml_utilities'
-        'libguestfs'
-    )
-    for PAQ in "${VIRTPKGS[@]}"; do
-        dnf install "$PAQ" -y
-    done
-    usermod -aG libvirt "$USER"
-    usermod -aG kvm "$USER"
-fi
-################################################################################
 
 ############################# Codecs ###########################################
 dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y
@@ -323,6 +307,9 @@ cd grub2-themes || return
 #################################################################################
 
 sed -i "s/Icon=\/var\/lib\/AccountsService\/icons\/$USER/Icon=\/usr\/share\/backgrounds\/wallpapers\/Fringe\/fibonacci3.jpg/g" "/var/lib/AccountsService/users/$USER"
+
+usermod -aG libvirt "$USER"
+usermod -aG kvm "$USER"
 
 postgresql-setup --initdb --unit postgresql
 systemctl enable --now cockpit.socket
