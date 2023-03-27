@@ -66,8 +66,6 @@ dnf check-update
 dnf makecache
 
 # Brave
-# dnf install dnf-plugins-core -y
-# dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
 sh -c 'echo -e "[brave-browser-rpm-release.s3.brave.com_x86_64_]\nname=created by dnf config-manager from https://brave-browser-rpm-release.s3.brave.com/x86_64/\nbaseurl=https://brave-browser-rpm-release.s3.brave.com/x86_64/\nenabled=1" > /etc/yum.repos.d/brave-browser-rpm-release.s3.brave.com_x86_64_.repo'
 rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
@@ -100,7 +98,6 @@ PAQUETES=(
     'gnome-shell-extension-pop-shell'
     'gnome-shell-extension-caffeine'
     'gnome-shell-extension-openweather'
-    #'gnome-shell-extension-sound-output-device-chooser'
     'gnome-commander'
     'file-roller-nautilus'
 
@@ -133,6 +130,7 @@ PAQUETES=(
     'autofs'
 
     #### Sistema ####
+    'tldr'
     'helix'
     'lsd'
     'corectrl'
@@ -170,7 +168,6 @@ PAQUETES=(
     'setroubleshoot'
 
     #### Multimedia ####
-    #'elisa-player'
     'vlc'
     'python-vlc'
     'mpv'
@@ -202,12 +199,8 @@ PAQUETES=(
     'filezilla'
     'sbcl'
     'golang'
-    'rust'
-    'cargo'
-    'rust-analyzer'
     'java-1.8.0-openjdk'
     'lldb'
-    #'java-latest-openjdk'
     'code'
     'tidy'
     'nodejs'
@@ -232,6 +225,23 @@ PAQUETES=(
     'fontforge'
     'fontconfig-font-replacements'
     'fontconfig-enhanced-defaults'
+
+    ### Bases de datos ###
+    'postgresql-server'
+    'pgadmin4'
+    'postgis'
+    'postgis-client'
+    'postgis-utils'
+    'community-mysql-server'
+    'sqlite'
+
+    ### Cockpit ###
+    'cockpit'
+    'cockpit-sosreport'
+    'cockpit-machines'
+    'cockpit-podman'
+    'cockpit-selinux'
+    'cockpit-navigator'
 )
  
 for PAQ in "${PAQUETES[@]}"; do
@@ -239,6 +249,7 @@ for PAQ in "${PAQUETES[@]}"; do
 done
 
 rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+rpm -i https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-8.0.31-1.fc37.x86_64.rpm
 ###############################################################################
 
 ########################## Virtualizacion #####################################
@@ -270,51 +281,10 @@ dnf group install --with-optional Multimedia -y
 ################################################################################
 
 ################################ Wallpapers #####################################
-read -rp "Instalar Wallpapers? (S/N): " WPP
-if [ "$WPP" == 'S' ]; then
-    echo -e "\nInstalando wallpapers..."
-    git clone https://github.com/gastongmartinez/wallpapers.git
-    mv -f wallpapers/ "/usr/share/backgrounds/"
-fi
+echo -e "\nInstalando wallpapers..."
+git clone https://github.com/gastongmartinez/wallpapers.git
+mv -f wallpapers/ "/usr/share/backgrounds/"
 #################################################################################
-
-############################## Bases de Datos ###################################
-read -rp "Instalar Bases de Datos? (S/N): " PGS
-if [ "$PGS" == 'S' ]; then
-    #rpm -i https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-fedora-repo-2-1.noarch.rpm
-    dnf install postgresql-server -y
-    dnf install pgadmin4 -y
-    dnf install postgis -y
-    dnf install postgis-client -y
-    dnf install postgis-utils -y
-
-    postgresql-setup --initdb --unit postgresql
-    # systemctl enable postgresql.service
-
-    # dnf install mariadb-server-utils -y
-    dnf install community-mysql-server -y
-    rpm -i https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-8.0.31-1.fc37.x86_64.rpm
-
-    dnf install sqlite -y
-fi
-#################################################################################
-
-#################################################################################
-read -rp "Instalar Cockpit? (S/N): " CKP
-if [ "$CKP" == 'S' ]; then
-    dnf install cockpit -y
-    dnf install cockpit-sosreport -y
-    dnf install cockpit-machines -y
-    dnf install cockpit-podman -y
-    dnf install cockpit-selinux -y
-    dnf install cockpit-navigator -y
-    systemctl enable --now cockpit.socket
-    firewall-cmd --add-service=cockpit
-    firewall-cmd --add-service=cockpit --permanent
-fi
-#################################################################################
-
-sed -i "s/Icon=\/var\/lib\/AccountsService\/icons\/$USER/Icon=\/usr\/share\/backgrounds\/wallpapers\/Fringe\/fibonacci3.jpg/g" "/var/lib/AccountsService/users/$USER"
 
 ################################## WM ######################################
 read -rp "Instalar Window Managers? (S/N): " AW
@@ -329,6 +299,15 @@ if [ "$AW" == 'S' ]; then
         'picom'
         'lxappearance'
         'xorg-x11-server-Xephyr'
+        'jgmenu'
+        'i3lock'
+        'sway'
+        'sway-wallpapers'
+        'grimshot'
+        'waybar'
+        'wofi'
+        'wlr-randr'
+        'wlogout'
     )
     for PAQ in "${AWPAQ[@]}"; do
         dnf install "$PAQ" -y
@@ -343,12 +322,19 @@ cd grub2-themes || return
 ./install.sh
 #################################################################################
 
+sed -i "s/Icon=\/var\/lib\/AccountsService\/icons\/$USER/Icon=\/usr\/share\/backgrounds\/wallpapers\/Fringe\/fibonacci3.jpg/g" "/var/lib/AccountsService/users/$USER"
+
+postgresql-setup --initdb --unit postgresql
+systemctl enable --now cockpit.socket
+firewall-cmd --add-service=cockpit
+firewall-cmd --add-service=cockpit --permanent
+
+alternatives --set java java-1.8.0-openjdk.x86_64
+
 read -rp "Modificar fstab? (S/N): " FST
 if [ "$FST" == 'S' ]; then
     sed -i 's/subvol=@/compress=zstd,noatime,space_cache=v2,ssd,discard=async,subvol=@/g' "/etc/fstab"
 fi
-
-alternatives --set java java-1.8.0-openjdk.x86_64
 
 sleep 2
 
