@@ -15,12 +15,6 @@ then
     exit 2
 fi
 
-############################################################################################################################################
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
-unzip JetBrainsMono.zip -d ~/.local/share/fonts
-fc-cache -f -v
-rm JetBrainsMono.zip
-
 ############################################# Tema WhiteSur #################################################################################
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
 cd WhiteSur-gtk-theme || return

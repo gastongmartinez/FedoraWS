@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# NerdFonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
+unzip JetBrainsMono.zip -d ~/.local/share/fonts
+fc-cache -f -v
+rm JetBrainsMono.zip
+
 # Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-mac -o ~/.local/bin/rust-analyzer
