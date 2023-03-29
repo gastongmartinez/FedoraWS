@@ -76,6 +76,7 @@ dnf config-manager --add-repo https://rpm.librewolf.net/librewolf-repo.repo
 dnf copr enable frostyx/qtile -y
 dnf copr enable atim/lazygit -y
 dnf copr enable varlad/helix -y
+dnf copr enable erikreider/SwayNotificationCenter -y
 
 USER=$(grep "1000" /etc/passwd | awk -F : '{ print $1 }')
 
@@ -279,6 +280,7 @@ if [ "$AW" == 'S' ]; then
         'wofi'
         'wlr-randr'
         'wlogout'
+        'SwayNotificationCenter'
     )
     for PAQ in "${AWPAQ[@]}"; do
         dnf install "$PAQ" -y
