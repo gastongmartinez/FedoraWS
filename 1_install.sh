@@ -281,6 +281,7 @@ if [ "$AW" == 'S' ]; then
         'wlr-randr'
         'wlogout'
         'SwayNotificationCenter'
+        'pavucontrol'
     )
     for PAQ in "${AWPAQ[@]}"; do
         dnf install "$PAQ" -y
