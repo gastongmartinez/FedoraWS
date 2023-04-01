@@ -50,25 +50,28 @@ rm -rf ~/.doom.d
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 
 # Anaconda
-# wget https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh
-# chmod +x Anaconda3-2022.10-Linux-x86_64.sh
-# ./Anaconda3-2022.10-Linux-x86_64.sh
+# wget https://repo.anaconda.com/archive/Anaconda3-2023.03-Linux-x86_64.sh
+# chmod +x Anaconda3-2023.03-Linux-x86_64.sh
+# ./Anaconda3-2023.03-Linux-x86_64.sh
 
 # Jetbrains
 if [ ! -d ~/Apps ]; then
     mkdir ~/Apps
 fi
-# cd ~/Apps || return
-# wget https://download.jetbrains.com/python/pycharm-professional-2022.3.3.tar.gz
-# wget https://download.jetbrains.com/datagrip/datagrip-2022.3.3.tar.gz
-##### wget https://download.jetbrains.com/cpp/CLion-2022.3.tar.gz
-# tar -xzf pycharm-professional-2022.3.3.tar.gz
-# tar -xzf datagrip-2022.3.3.tar.gz
-##### tar -xzf CLion-2022.3.tar.gz
-# rm pycharm-professional-2022.3.3.tar.gz
-# rm datagrip-2022.3.3.tar.gz
-##### rm CLion-2022.3.tar.gz
-# cd ~ || return
+cd ~/Apps || return
+wget https://download.jetbrains.com/python/pycharm-professional-2023.1.tar.gz
+wget https://download.jetbrains.com/datagrip/datagrip-2023.1.tar.gz
+wget https://download.jetbrains.com/cpp/CLion-2023.1.tar.gz
+wget https://download.jetbrains.com/idea/ideaIU-2023.1.tar.gz
+tar -xzf pycharm-professional-2023.1.tar.gz
+tar -xzf datagrip-2023.1.tar.gz
+tar -xzf CLion-2023.1.tar.gz
+tar -xzf ideaIU-2023.1.tar.gz
+rm pycharm-professional-2023.1.tar.gz
+rm datagrip-2023.1.tar.gz
+rm CLion-2023.1.tar.gz
+rm ideaIU-2023.1.tar.gz
+cd ~ || return
 
 
 # Android
