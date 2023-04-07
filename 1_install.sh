@@ -14,14 +14,6 @@ then
     passwd root
 fi
 
-read -rp "Corregir la resolucion en VMWare Workstation? (S/N): " RES
-if [ "$RES" == 'S' ]; 
-then
-    cp /etc/vmware-tools/tools.conf.example /etc/vmware-tools/tools.conf
-    sed -i 's/#enable=true/enable=true/g' "/etc/vmware-tools/tools.conf"
-    systemctl restart vmtoolsd.service
-fi
-
 read -rp "Establecer el nombre del equipo? (S/N): " HN
 if [ "$HN" == 'S' ]; 
 then
