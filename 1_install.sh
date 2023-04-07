@@ -167,22 +167,22 @@ PAQUETES=(
     'nmap'
     'wireshark'
     'firewall-applet'
-    'gns3-gui'
-    'gns3-server'
+    #'gns3-gui'
+    #'gns3-server'
 
     #### Diseño ####
     'gimp'
     'inkscape'
     'krita'
-    'blender'
+    #'blender'
 
     #### DEV ####
     'clang'
     'cmake'
     'meson'
     'pipenv'
-    'python3-spyder'
-    'rstudio-desktop'
+    #'python3-spyder'
+    #'rstudio-desktop'
     'filezilla'
     'sbcl'
     'golang'
