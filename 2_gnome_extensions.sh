@@ -23,22 +23,8 @@ make install
 cd "$DIRE" || return
 rm -rf ArcMenu
 
-# Dash to Panel
-git clone https://github.com/home-sweet-gnome/dash-to-panel.git
-cd dash-to-panel || return
-make install
-cd "$DIRE" || return
-rm -rf dash-to-panel
-
 # Vitals
 git clone https://github.com/corecoding/Vitals.git ~/.local/share/gnome-shell/extensions/Vitals@CoreCoding.com
-
-# Blur my shell
-git clone https://github.com/aunetx/blur-my-shell
-cd blur-my-shell || return
-make install
-cd "$DIRE" || return
-rm -rf blur-my-shell
 
 # Systemd Manager
 git clone https://github.com/hardpixel/systemd-manager.git
