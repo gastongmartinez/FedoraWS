@@ -229,6 +229,27 @@ PAQUETES=(
     'ebtables-services'
     'bridge-utils'
     'libguestfs'
+
+    ### Window Managers ###
+    'qtile'
+    'awesome'
+    'dmenu'
+    'rofi'
+    'nitrogen'
+    'feh'
+    'picom'
+    'lxappearance'
+    'xorg-x11-server-Xephyr'
+    'jgmenu'
+    'i3lock'
+    'sway'
+    'grimshot'
+    'waybar'
+    'wofi'
+    'wlr-randr'
+    'wlogout'
+    'SwayNotificationCenter'
+    'pavucontrol'
 )
  
 for PAQ in "${PAQUETES[@]}"; do
@@ -251,37 +272,6 @@ git clone https://github.com/gastongmartinez/wallpapers.git
 mv -f wallpapers/ "/usr/share/backgrounds/"
 #################################################################################
 
-################################## WM ######################################
-read -rp "Instalar Window Managers? (S/N): " AW
-if [ "$AW" == 'S' ]; then
-    AWPAQ=(
-        'qtile'
-        'awesome'
-        'dmenu'
-        'rofi'
-        'nitrogen'
-        'feh'
-        'picom'
-        'lxappearance'
-        'xorg-x11-server-Xephyr'
-        'jgmenu'
-        'i3lock'
-        'sway'
-        'grimshot'
-        'waybar'
-        'wofi'
-        'wlr-randr'
-        'wlogout'
-        'SwayNotificationCenter'
-        'pavucontrol'
-    )
-    for PAQ in "${AWPAQ[@]}"; do
-        dnf install "$PAQ" -y
-    done
-    sed -i 's/Name=awesome/Name=Awesome/g' "/usr/share/xsessions/awesome.desktop"
-fi
-#################################################################################
-
 ############################### GRUB ############################################
 git clone https://github.com/vinceliuice/grub2-themes.git
 cd grub2-themes || return
@@ -289,6 +279,7 @@ cd grub2-themes || return
 #################################################################################
 
 sed -i "s/Icon=\/var\/lib\/AccountsService\/icons\/$USER/Icon=\/usr\/share\/backgrounds\/wallpapers\/Fringe\/fibonacci3.jpg/g" "/var/lib/AccountsService/users/$USER"
+sed -i 's/Name=awesome/Name=Awesome/g' "/usr/share/xsessions/awesome.desktop"
 
 usermod -aG libvirt "$USER"
 usermod -aG kvm "$USER"
