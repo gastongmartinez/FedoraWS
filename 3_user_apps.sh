@@ -71,6 +71,10 @@ rm pycharm-professional-2023.1.tar.gz
 rm datagrip-2023.1.tar.gz
 rm CLion-2023.1.tar.gz
 rm ideaIU-2023.1.tar.gz
+mv clion* clion
+mv Data* DataGrip
+mv idea* idea
+mv pycharm* pycharm
 cd ~ || return
 
 
