@@ -189,6 +189,8 @@ PAQUETES=(
     'sbcl'
     'golang'
     'java-1.8.0-openjdk'
+    'java-11-openjdk'
+    'java-17-openjdk'
     'lldb'
     'code'
     'tidy'
@@ -291,7 +293,7 @@ systemctl enable --now cockpit.socket
 firewall-cmd --add-service=cockpit
 firewall-cmd --add-service=cockpit --permanent
 
-alternatives --set java java-1.8.0-openjdk.x86_64
+# alternatives --set java java-1.8.0-openjdk.x86_64
 
 read -rp "Modificar fstab? (S/N): " FST
 if [ "$FST" == 'S' ]; then
