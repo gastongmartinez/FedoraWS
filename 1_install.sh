@@ -185,6 +185,7 @@ PAQUETES=(
     'pipenv'
     #'python3-spyder'
     #'rstudio-desktop'
+    'python3-pip'
     'filezilla'
     'sbcl'
     'golang'
