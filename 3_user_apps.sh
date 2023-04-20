@@ -42,17 +42,9 @@ git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
 sleep 5
 rm -rf ~/.doom.d
-# sudo cp /usr/share/applications/emacs.desktop /usr/share/applications/emacsClient.desktop
-# sudo sed -i "s/Name=Emacs/Name=Emacs Client/g" "/usr/share/applications/emacsClient.desktop"
-# sudo sed -i "s/Exec=emacs/Exec=emacsclient -c -a 'emacs'/g" "/usr/share/applications/emacsClient.desktop" 
 
 # Tmux Plugin Manager
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
-
-# Anaconda
-wget https://repo.anaconda.com/archive/Anaconda3-2023.03-Linux-x86_64.sh
-chmod +x Anaconda3-2023.03-Linux-x86_64.sh
-./Anaconda3-2023.03-Linux-x86_64.sh
 
 # Jetbrains
 if [ ! -d ~/Apps ]; then
@@ -77,20 +69,10 @@ mv idea* idea
 mv pycharm* pycharm
 cd ~ || return
 
-
-# Android
-# if [ ! -d ~/Apps ]; then
-#     mkdir ~/Apps
-# fi
-# cd ~/Apps || return
-# wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2021.3.1.17/android-studio-2021.3.1.17-linux.tar.gz
-# tar -xzf android-studio-2021.3.1.17-linux.tar.gz
-# rm android-studio-2021.3.1.17-linux.tar.gz
-# cd ~/Apps || return
-# wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.3.9-stable.tar.xz
-# tar xf flutter_linux_3.3.9-stable.tar.xz
-# rm flutter_linux_3.3.9-stable.tar.xz
-# cd ~ || return
+# Anaconda
+wget https://repo.anaconda.com/archive/Anaconda3-2023.03-Linux-x86_64.sh
+chmod +x Anaconda3-2023.03-Linux-x86_64.sh
+./Anaconda3-2023.03-Linux-x86_64.sh
 
 # Bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
