@@ -190,8 +190,6 @@ PAQUETES=(
     'sbcl'
     'golang'
     'java-1.8.0-openjdk'
-    'java-11-openjdk'
-    'java-17-openjdk'
     'lldb'
     'code'
     'tidy'
@@ -263,6 +261,8 @@ done
 
 rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 rpm -i https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-8.0.31-1.fc37.x86_64.rpm
+wget https://corretto.aws/downloads/latest/amazon-corretto-17-x64-linux-jdk.rpm
+dnf install amazon-corretto-17-x64-linux-jdk.rpm -y
 ###############################################################################
 
 ############################# Codecs ###########################################
@@ -294,6 +294,8 @@ systemctl enable --now cockpit.socket
 firewall-cmd --add-service=cockpit
 firewall-cmd --add-service=cockpit --permanent
 
+alternatives --set java /usr/lib/jvm/java-17-amazon-corretto/bin/java
+alternatives --set javac /usr/lib/jvm/java-17-amazon-corretto/bin/javac
 # alternatives --set java java-1.8.0-openjdk.x86_64
 
 read -rp "Modificar fstab? (S/N): " FST
