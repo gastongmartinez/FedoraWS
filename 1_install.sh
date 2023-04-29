@@ -218,6 +218,9 @@ PAQUETES=(
     'postgis-utils'
     'community-mysql-server'
     'sqlite'
+    'sqlite-analyzer'
+    'sqlite-tools'
+    'sqlitebrowser'
 
     ### Cockpit ###
     'cockpit'
