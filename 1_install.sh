@@ -271,7 +271,9 @@ dnf install amazon-corretto-17-x64-linux-jdk.rpm -y
 ############################# Codecs ###########################################
 dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y
 dnf install lame\* --exclude=lame-devel -y
-dnf group install --with-optional Multimedia -y
+dnf group upgrade --with-optional Multimedia -y
+dnf swap ffmpeg-free ffmpeg --allowerasing -y
+
 ################################################################################
 
 ################################ Wallpapers #####################################
