@@ -17,11 +17,11 @@ fi
 
 DIRE=$(pwd)
 # Arc Menu
-# git clone https://gitlab.com/arcmenu/ArcMenu.git
-# cd ArcMenu || return
-# make install
-# cd "$DIRE" || return
-# rm -rf ArcMenu
+git clone https://gitlab.com/arcmenu/ArcMenu.git
+cd ArcMenu || return
+make install
+cd "$DIRE" || return
+rm -rf ArcMenu
 
 # Vitals
 git clone https://github.com/corecoding/Vitals.git ~/.local/share/gnome-shell/extensions/Vitals@CoreCoding.com
@@ -34,12 +34,12 @@ cd "$DIRE" || return
 rm -rf systemd-manager
 
 # Tiling assistant
-# git clone https://github.com/Leleat/Tiling-Assistant.git
-# cd Tiling-Assistant/scripts || return
-# chmod +x build.sh
-# ./build.sh -i
-# cd "$DIRE" || return
-# rm -rf Tiling-Assistant
+git clone https://github.com/Leleat/Tiling-Assistant.git
+cd Tiling-Assistant/scripts || return
+chmod +x build.sh
+./build.sh -i
+cd "$DIRE" || return
+rm -rf Tiling-Assistant
 
 # Removable Drive
 git clone https://gitlab.gnome.org/GNOME/gnome-shell-extensions.git
