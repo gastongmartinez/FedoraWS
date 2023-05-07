@@ -156,6 +156,7 @@ PAQUETES=(
     'stacer'
     'timeshift'
     'setroubleshoot'
+    'gettext'
 
     #### Multimedia ####
     'vlc'
