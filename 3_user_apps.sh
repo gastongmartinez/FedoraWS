@@ -51,28 +51,28 @@ if [ ! -d ~/Apps ]; then
     mkdir ~/Apps
 fi
 cd ~/Apps || return
-wget https://download.jetbrains.com/python/pycharm-professional-2023.1.tar.gz
-wget https://download.jetbrains.com/datagrip/datagrip-2023.1.tar.gz
-wget https://download.jetbrains.com/cpp/CLion-2023.1.tar.gz
+# wget https://download.jetbrains.com/python/pycharm-professional-2023.1.tar.gz
+# wget https://download.jetbrains.com/datagrip/datagrip-2023.1.tar.gz
+# wget https://download.jetbrains.com/cpp/CLion-2023.1.tar.gz
 wget https://download.jetbrains.com/idea/ideaIU-2023.1.tar.gz
-tar -xzf pycharm-professional-2023.1.tar.gz
-tar -xzf datagrip-2023.1.tar.gz
-tar -xzf CLion-2023.1.tar.gz
+# tar -xzf pycharm-professional-2023.1.tar.gz
+# tar -xzf datagrip-2023.1.tar.gz
+# tar -xzf CLion-2023.1.tar.gz
 tar -xzf ideaIU-2023.1.tar.gz
-rm pycharm-professional-2023.1.tar.gz
-rm datagrip-2023.1.tar.gz
-rm CLion-2023.1.tar.gz
+# rm pycharm-professional-2023.1.tar.gz
+# rm datagrip-2023.1.tar.gz
+# rm CLion-2023.1.tar.gz
 rm ideaIU-2023.1.tar.gz
-mv clion* clion
-mv Data* DataGrip
+# mv clion* clion
+# mv Data* DataGrip
+# mv pycharm* pycharm
 mv idea* idea
-mv pycharm* pycharm
 cd ~ || return
 
 # Anaconda
-wget https://repo.anaconda.com/archive/Anaconda3-2023.03-Linux-x86_64.sh
-chmod +x Anaconda3-2023.03-Linux-x86_64.sh
-./Anaconda3-2023.03-Linux-x86_64.sh
+# wget https://repo.anaconda.com/archive/Anaconda3-2023.03-Linux-x86_64.sh
+# chmod +x Anaconda3-2023.03-Linux-x86_64.sh
+# ./Anaconda3-2023.03-Linux-x86_64.sh
 
 # Bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
