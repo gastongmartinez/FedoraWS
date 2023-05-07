@@ -176,7 +176,7 @@ PAQUETES=(
     #### Diseño ####
     'gimp'
     'inkscape'
-    'krita'
+    #'krita'
     #'blender'
 
     #### DEV ####
@@ -240,8 +240,8 @@ PAQUETES=(
     ### Window Managers ###
     'qtile'
     'awesome'
-    'dmenu'
-    'rofi'
+    #'dmenu'
+    #'rofi'
     'nitrogen'
     'feh'
     'picom'
@@ -274,7 +274,6 @@ dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 
 dnf install lame\* --exclude=lame-devel -y
 dnf group upgrade --with-optional Multimedia -y
 dnf swap ffmpeg-free ffmpeg --allowerasing -y
-
 ################################################################################
 
 ################################ Wallpapers #####################################
