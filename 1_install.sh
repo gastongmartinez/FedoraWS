@@ -286,7 +286,11 @@ mv -f wallpapers/ "/usr/share/backgrounds/"
 git clone https://github.com/vinceliuice/grub2-themes.git
 cd grub2-themes || return
 ./install.sh
+cd .. || return
 #################################################################################
+
+rm -rf grub2-themes
+rm amazon-corretto-17-x64-linux-jdk.rpm
 
 sed -i "s/Icon=\/var\/lib\/AccountsService\/icons\/$USER/Icon=\/usr\/share\/backgrounds\/wallpapers\/Fringe\/fibonacci3.jpg/g" "/var/lib/AccountsService/users/$USER"
 sed -i 's/Name=awesome/Name=Awesome/g' "/usr/share/xsessions/awesome.desktop"
