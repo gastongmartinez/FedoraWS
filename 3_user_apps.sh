@@ -7,7 +7,7 @@ fc-cache -f -v
 rm JetBrainsMono.zip
 
 # Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 if [ ! -d ~/.local/bin ]; then
     mkdir -p ~/.local/bin
 fi
