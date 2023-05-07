@@ -49,6 +49,11 @@ ninja -C build install
 cd "$DIRE" || return
 rm -rf gnome-shell-extensions
 
+# Aylur widgets
+git clone https://github.com/Aylur/gnome-extensions.git
+cd gnome-extensions || return
+mv ./widgets@aylur ~/.local/share/gnome-shell/extensions/widgets@aylur
+
 sleep 2
 
 reboot
