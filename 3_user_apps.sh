@@ -27,6 +27,7 @@ flatpak --user install flathub com.rafaelmardojai.Blanket -y
 flatpak --user install flathub com.github.tchx84.Flatseal -y
 flatpak --user install flathub com.github.neithern.g4music -y
 flatpak --user install flathub com.axosoft.GitKraken -y
+flatpak --user install flathub com.jetbrains.PyCharm-Community -y
 
 # Doom Emacs
 if [ -d ~/.emacs.d ]; then
