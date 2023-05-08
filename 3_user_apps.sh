@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+if [ ! -d ~/Apps ]; then
+    mkdir ~/Apps
+fi
+
 # NerdFonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
 unzip JetBrainsMono.zip -d ~/.local/share/fonts
@@ -28,6 +32,7 @@ flatpak --user install flathub com.github.tchx84.Flatseal -y
 flatpak --user install flathub com.github.neithern.g4music -y
 flatpak --user install flathub com.axosoft.GitKraken -y
 flatpak --user install flathub com.jetbrains.PyCharm-Community -y
+flatpak --user install flathub com.jetbrains.IntelliJ-IDEA-Community -y
 
 # Doom Emacs
 if [ -d ~/.emacs.d ]; then
@@ -46,29 +51,6 @@ rm -rf ~/.doom.d
 
 # Tmux Plugin Manager
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
-
-# Jetbrains
-if [ ! -d ~/Apps ]; then
-    mkdir ~/Apps
-fi
-cd ~/Apps || return
-# wget https://download.jetbrains.com/python/pycharm-professional-2023.1.tar.gz
-# wget https://download.jetbrains.com/datagrip/datagrip-2023.1.tar.gz
-# wget https://download.jetbrains.com/cpp/CLion-2023.1.tar.gz
-wget https://download.jetbrains.com/idea/ideaIU-2023.1.tar.gz
-# tar -xzf pycharm-professional-2023.1.tar.gz
-# tar -xzf datagrip-2023.1.tar.gz
-# tar -xzf CLion-2023.1.tar.gz
-tar -xzf ideaIU-2023.1.tar.gz
-# rm pycharm-professional-2023.1.tar.gz
-# rm datagrip-2023.1.tar.gz
-# rm CLion-2023.1.tar.gz
-rm ideaIU-2023.1.tar.gz
-# mv clion* clion
-# mv Data* DataGrip
-# mv pycharm* pycharm
-mv idea* idea
-cd ~ || return
 
 # Anaconda
 # wget https://repo.anaconda.com/archive/Anaconda3-2023.03-Linux-x86_64.sh
