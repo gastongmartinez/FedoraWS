@@ -91,7 +91,7 @@ dconf write /org/gnome/shell/extensions/aylurs-widgets/background-clock-y-offset
 dconf write /org/gnome/shell/extensions/aylurs-widgets/background-clock-date-format "'%A %'"
 dconf write /org/gnome/shell/extensions/aylurs-widgets/background-clock-date-format "'%A %d'"
 dconf write /org/gnome/shell/extensions/aylurs-widgets/background-clock-date-size 46
-dconf write /org/gnome/shell/extensions/aylurs-widgets/dash-button-position 
+dconf write /org/gnome/shell/extensions/aylurs-widgets/dash-button-position 2
 dconf write /org/gnome/shell/extensions/aylurs-widgets/notification-indicator-position 2
 
 dconf write /org/gnome/shell/disable-user-extensions false
