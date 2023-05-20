@@ -88,6 +88,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.local/share/
 } >>~/.zshrc
 chsh -s /usr/bin/zsh
 
+go install github.com/go-delve/delve/cmd/dlv@latest
 pip install black 'python-lsp-server[all]' pyright yamllint autopep8
 cargo install taplo-cli --locked
 cargo install stylua
