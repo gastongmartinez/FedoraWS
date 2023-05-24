@@ -8,12 +8,12 @@ if [ "$R_USER" -ne 0 ]; then
 fi
 
 read -rp "Establecer el password para root? (S/N): " PR
-if [ "$PR" == 'S' ]; then
+if [[ $PR =~ ^[Ss]$ ]]; then
     passwd root
 fi
 
 read -rp "Establecer el nombre del equipo? (S/N): " HN
-if [ "$HN" == 'S' ]; then
+if [[ $HN =~ ^[Ss]$ ]]; then
     read -rp "Ingrese el nombre del equipo: " EQUIPO
     if [ -n "$EQUIPO" ]; then
         echo -e "$EQUIPO" > /etc/hostname
@@ -40,7 +40,7 @@ dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-relea
 
 # MESA
 read -rp "Cambiar drivers de video a MESA Freeworld? (S/N): " MESA
-if [ "$MESA" == 'S' ]; then
+if [[ $MESA =~ ^[Ss]$ ]]; then
     dnf swap mesa-va-drivers mesa-va-drivers-freeworld -y
     dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld -y
 fi
@@ -307,7 +307,7 @@ alternatives --set javac /usr/lib/jvm/java-17-amazon-corretto/bin/javac
 # alternatives --set java java-1.8.0-openjdk.x86_64
 
 read -rp "Modificar fstab? (S/N): " FST
-if [ "$FST" == 'S' ]; then
+if [[ $FST =~ ^[Ss]$ ]]; then
     sed -i 's/subvol=@/compress=zstd,noatime,space_cache=v2,ssd,discard=async,subvol=@/g' "/etc/fstab"
 fi
 
