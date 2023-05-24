@@ -2,24 +2,20 @@
 
 # Validacion del usuario ejecutando el script
 R_USER=$(id -u)
-if [ "$R_USER" -ne 0 ];
-then
+if [ "$R_USER" -ne 0 ]; then
     echo -e "\nDebe ejecutar este script como root o utilizando sudo.\n"
     exit 1
 fi
 
 read -rp "Establecer el password para root? (S/N): " PR
-if [ "$PR" == 'S' ]; 
-then
+if [ "$PR" == 'S' ]; then
     passwd root
 fi
 
 read -rp "Establecer el nombre del equipo? (S/N): " HN
-if [ "$HN" == 'S' ]; 
-then
+if [ "$HN" == 'S' ]; then
     read -rp "Ingrese el nombre del equipo: " EQUIPO
-    if [ -n "$EQUIPO" ]; 
-    then
+    if [ -n "$EQUIPO" ]; then
         echo -e "$EQUIPO" > /etc/hostname
     fi
 fi
@@ -44,8 +40,7 @@ dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-relea
 
 # MESA
 read -rp "Cambiar drivers de video a MESA Freeworld? (S/N): " MESA
-if [ "$MESA" == 'S' ]; 
-then
+if [ "$MESA" == 'S' ]; then
     dnf swap mesa-va-drivers mesa-va-drivers-freeworld -y
     dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld -y
 fi
