@@ -46,7 +46,6 @@ if [[ $DOOM =~ ^[Ss]$ ]]; then
     if [ -d ~/.emacs.d ]; then
         rm -Rf ~/.emacs.d
     fi
-    go install golang.org/x/tools/gopls@latest
     go install github.com/fatih/gomodifytags@latest
     go install github.com/cweill/gotests/...@latest
     go install github.com/x-motemen/gore/cmd/gore@latest
@@ -101,6 +100,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.local/share/
 } >>~/.zshrc
 chsh -s /usr/bin/zsh
 
+go install golang.org/x/tools/gopls@latest
+go install golang.org/x/tools/cmd/goimports@latest
 go install github.com/go-delve/delve/cmd/dlv@latest
 pip install black 'python-lsp-server[all]' pyright yamllint autopep8
 cargo install taplo-cli --locked
