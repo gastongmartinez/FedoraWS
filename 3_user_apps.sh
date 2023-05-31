@@ -97,6 +97,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.local/share/
     echo 'setopt sharehistory'
     echo 'setopt incappendhistory'
     echo 'export PATH="$HOME/anaconda3/bin:$HOME/Apps/flutter/bin:$HOME/.local/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/.emacs.d/bin:$PATH"'
+    echo 'alias nvim-go="NVIM_APPNAME=nvim-go nvim"'
 } >>~/.zshrc
 chsh -s /usr/bin/zsh
 
