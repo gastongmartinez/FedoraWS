@@ -189,7 +189,6 @@ PAQUETES=(
     'filezilla'
     'sbcl'
     'golang'
-    'java-1.8.0-openjdk'
     'lldb'
     'code'
     'tidy'
@@ -304,7 +303,6 @@ firewall-cmd --add-service=cockpit --permanent
 
 alternatives --set java /usr/lib/jvm/java-17-amazon-corretto/bin/java
 alternatives --set javac /usr/lib/jvm/java-17-amazon-corretto/bin/javac
-# alternatives --set java java-1.8.0-openjdk.x86_64
 
 read -rp "Modificar fstab? (S/N): " FST
 if [[ $FST =~ ^[Ss]$ ]]; then
