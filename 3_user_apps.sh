@@ -80,7 +80,7 @@ cp /usr/share/applications/ulauncher.desktop ~/.config/autostart/
 
 # ZSH
 if [ ! -d ~/.local/share/zsh ]; then
-    mkdir ~/.local/share/zsh
+    mkdir -p ~/.local/share/zsh
 fi
 touch ~/.zshrc
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.local/share/zsh/powerlevel10k
