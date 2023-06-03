@@ -51,6 +51,7 @@ rm -rf gnome-shell-extensions
 git clone https://github.com/Aylur/gnome-extensions.git
 cd gnome-extensions || return
 mv ./widgets@aylur ~/.local/share/gnome-shell/extensions/widgets@aylur
+cd "$DIRE" || return
 rm -rf gnome-extensions
 
 sleep 2
