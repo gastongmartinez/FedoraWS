@@ -180,6 +180,7 @@ PAQUETES=(
 
     #### DEV ####
     'clang'
+    'clang-tools-extra'
     'cmake'
     'meson'
     'pipenv'
