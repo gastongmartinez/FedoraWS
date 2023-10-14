@@ -13,9 +13,6 @@ if [ -z "$DISPLAY" ]; then
     exit 2
 fi
 
-# Dark Theme
-dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
-
 ############################################# Tema WhiteSur #################################################################################
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
 cd WhiteSur-gtk-theme || return
@@ -46,7 +43,7 @@ git clone https://github.com/Raayib/WhiteSur-Dark-ulauncher.git ~/.config/ulaunc
 
 ############################################## Extensiones ##################################################################################
 # Activar extensiones
-dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.org', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'Vitals@CoreCoding.com', 'systemd-manager@hardpixel.eu', 'tiling-assistant@leleat-on-github', 'blur-my-shell@aunetx', 'no-overview@fthx', 'pop-shell@system76.com', 'dash-to-dock@micxgx.gmail.com', 'caffeine@patapon.info', 'widgets@aylur']"
+dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.org', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'Vitals@CoreCoding.com', 'systemd-manager@hardpixel.eu', 'tiling-assistant@leleat-on-github', 'blur-my-shell@aunetx', 'no-overview@fthx', 'dash-to-dock@micxgx.gmail.com', 'caffeine@patapon.info']"
 dconf write /org/gnome/shell/disabled-extensions "['dash-to-panel@jderose9.github.com']"
 
 # ArcMenu
@@ -66,34 +63,11 @@ dconf write /org/gnome/mutter/edge-tiling false
 dconf write /org/gnome/shell/overrides/edge-tiling false
 dconf write /com/github/repsac-by/quake-mode/quake-mode-tray false
 
-# Pop Shell
-dconf write /org/gnome/shell/extensions/pop-shell/tile-by-default false
-dconf write /org/gnome/shell/extensions/pop-shell/gap-inner 'uint32 1'
-dconf write /org/gnome/shell/extensions/pop-shell/gap-outer 'uint32 1'
-dconf write /org/gnome/shell/extensions/pop-shell/hint-color-rgba "'rgb(170,170,170)'"
-dconf write /org/gnome/shell/extensions/pop-shell/active-hint false
-
 # Dash to dock
 dconf write /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size 32
 dconf write /org/gnome/shell/extensions/dash-to-dock/show-apps-at-top true
 dconf write /org/gnome/shell/extensions/dash-to-dock/apply-custom-theme true
 dconf write /org/gnome/shell/extensions/blur-my-shell/dash-to-dock/blur false
-
-# Aylur Widgets
-dconf write /org/gnome/shell/extensions/aylurs-widgets/dash-links-names "['reddit', 'youtube', 'gmail', 'twitter', 'github']"
-dconf write /org/gnome/shell/extensions/aylurs-widgets/dash-links-urls "['https://www.reddit.com/', 'https://www.youtube.com/', 'https://www.gmail.com/', 'https://twitter.com/', 'https://www.github.com/']"
-dconf write /org/gnome/shell/extensions/aylurs-widgets/battery-bar false
-dconf write /org/gnome/shell/extensions/aylurs-widgets/date-menu-tweaks false
-dconf write /org/gnome/shell/extensions/aylurs-widgets/media-player false
-dconf write /org/gnome/shell/extensions/aylurs-widgets/power-menu false
-dconf write /org/gnome/shell/extensions/aylurs-widgets/workspace-indicator false
-dconf write /org/gnome/shell/extensions/aylurs-widgets/background-clock-x-offset 50
-dconf write /org/gnome/shell/extensions/aylurs-widgets/background-clock-y-offset 115
-dconf write /org/gnome/shell/extensions/aylurs-widgets/background-clock-date-format "'%A %'"
-dconf write /org/gnome/shell/extensions/aylurs-widgets/background-clock-date-format "'%A %d'"
-dconf write /org/gnome/shell/extensions/aylurs-widgets/background-clock-date-size 46
-dconf write /org/gnome/shell/extensions/aylurs-widgets/dash-button-position 2
-dconf write /org/gnome/shell/extensions/aylurs-widgets/notification-indicator-position 2
 
 dconf write /org/gnome/shell/disable-user-extensions false
 #############################################################################################################################################
@@ -105,6 +79,7 @@ dconf write /org/gnome/desktop/wm/preferences/button-layout "'appmenu:minimize,m
 dconf write /org/gnome/mutter/center-new-windows true
 
 # Tema
+dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
 dconf write /org/gnome/desktop/interface/gtk-theme "'WhiteSur-Dark'"
 dconf write /org/gnome/shell/extensions/user-theme/name "'WhiteSur-Dark'"
 dconf write /org/gnome/desktop/interface/cursor-theme "'WhiteSur-cursors'"
