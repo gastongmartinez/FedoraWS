@@ -31,7 +31,6 @@ cd WhiteSur-cursors || return
 ./install.sh
 cd ..
 
-rm -rf WhiteSur-gtk-theme
 rm -rf WhiteSur-icon-theme
 rm -rf WhiteSur-cursors
 #############################################################################################################################################
@@ -39,7 +38,6 @@ rm -rf WhiteSur-cursors
 # Tema Ulauncher
 mkdir -p ~/.config/ulauncher/user-themes
 git clone https://github.com/Raayib/WhiteSur-Dark-ulauncher.git ~/.config/ulauncher/user-themes/WhiteSur-Dark-ulauncher
-
 
 ############################################## Extensiones ##################################################################################
 # Activar extensiones
