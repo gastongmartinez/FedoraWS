@@ -13,6 +13,9 @@ if [ -z "$DISPLAY" ]; then
     exit 2
 fi
 
+# Dark Theme
+dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+
 ############################################# Tema WhiteSur #################################################################################
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
 cd WhiteSur-gtk-theme || return
