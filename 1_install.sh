@@ -158,6 +158,8 @@ PAQUETES=(
     'vlc'
     'python-vlc'
     'mpv'
+    'HandBrake'
+    'HandBrake-gui'
 
     #### Juegos ####
     'chromium-bsu'

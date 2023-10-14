@@ -28,7 +28,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Flatpak
 flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak --user install flathub fr.handbrake.ghb -y
 flatpak --user install flathub md.obsidian.Obsidian -y
 flatpak --user install flathub com.mattjakeman.ExtensionManager -y
 flatpak --user install flathub io.github.shiftey.Desktop -y
