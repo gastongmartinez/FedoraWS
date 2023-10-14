@@ -44,7 +44,6 @@ git clone https://github.com/Raayib/WhiteSur-Dark-ulauncher.git ~/.config/ulaunc
 ############################################## Extensiones ##################################################################################
 # Activar extensiones
 dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.org', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'Vitals@CoreCoding.com', 'systemd-manager@hardpixel.eu', 'tiling-assistant@leleat-on-github', 'blur-my-shell@aunetx', 'no-overview@fthx', 'dash-to-dock@micxgx.gmail.com', 'caffeine@patapon.info']"
-dconf write /org/gnome/shell/disabled-extensions "['dash-to-panel@jderose9.github.com']"
 
 # ArcMenu
 dconf write /org/gnome/shell/extensions/arcmenu/available-placement "[true, false, false]"
