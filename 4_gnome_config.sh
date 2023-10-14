@@ -43,7 +43,7 @@ git clone https://github.com/Raayib/WhiteSur-Dark-ulauncher.git ~/.config/ulaunc
 
 ############################################## Extensiones ##################################################################################
 # Activar extensiones
-dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.org', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'Vitals@CoreCoding.com', 'systemd-manager@hardpixel.eu', 'tiling-assistant@leleat-on-github', 'blur-my-shell@aunetx', 'no-overview@fthx', 'dash-to-dock@micxgx.gmail.com', 'caffeine@patapon.info']"
+dconf write /org/gnome/shell/enabled-extensions "['background-logo@fedorahosted.org', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'Vitals@CoreCoding.com', 'systemd-manager@hardpixel.eu', 'tiling-assistant@leleat-on-github', 'blur-my-shell@aunetx', 'dash-to-dock@micxgx.gmail.com', 'caffeine@patapon.info', 'no-overview@fthx']"
 
 # ArcMenu
 dconf write /org/gnome/shell/extensions/arcmenu/available-placement "[true, false, false]"
@@ -95,7 +95,7 @@ dconf write /org/gnome/desktop/interface/monospace-font-name "'JetBrainsMono Ner
 dconf write /org/gnome/desktop/wm/preferences/titlebar-font "'Noto Sans CJK HK Bold 11'"
 
 # Aplicaciones favoritas
-dconf write /org/gnome/shell/favorite-apps "['thunar.desktop', 'kitty.desktop', 'virt-manager.desktop', 'mozilla-thunderbird.desktop', 'org.gabmus.gfeeds.desktop', 'qalculate-gtk.desktop', 'libreoffice-calc.desktop', 'code.desktop', 'google-chrome.desktop', 'firefox.desktop', 'brave-browser.desktop', 'org.qbittorrent.qBittorrent.desktop']"
+dconf write /org/gnome/shell/favorite-apps "['thunar.desktop', 'kitty.desktop', 'virt-manager.desktop', 'mozilla-thunderbird.desktop', 'org.gabmus.gfeeds.desktop', 'qalculate-gtk.desktop', 'libreoffice-calc.desktop', 'code.desktop', 'google-chrome.desktop', 'firefox.desktop', 'brave-browser.desktop', 'org.qbittorrent.qBittorrent.desktop', 'fr.handbrake.ghb.desktop']"
 
 # Nautilus
 dconf write /org/gnome/nautilus/icon-view/default-zoom-level "'small'"
