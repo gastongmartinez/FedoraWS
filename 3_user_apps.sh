@@ -65,6 +65,8 @@ if [[ $ANA =~ ^[Ss]$ ]]; then
     wget https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
     chmod +x Anaconda3-2023.09-0-Linux-x86_64.sh
     ./Anaconda3-2023.09-0-Linux-x86_64.sh
+    sleep 5
+    rm Anaconda3-2023.09-0-Linux-x86_64.sh
 fi
 
 # Bash
