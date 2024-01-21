@@ -238,8 +238,8 @@ PAQUETES=(
     'ebtables-services'
     'bridge-utils'
     'libguestfs'
-    'VirtualBox'
-    'virtualbox-guest-additions'
+    #'VirtualBox'
+    #'virtualbox-guest-additions'
 
     ### Window Managers ###
     'qtile'
@@ -304,7 +304,7 @@ sed -i 's/Name=awesome/Name=Awesome/g' "/usr/share/xsessions/awesome.desktop"
 
 usermod -aG libvirt "$USER"
 usermod -aG kvm "$USER"
-usermod -aG vboxusers "$USER"
+#usermod -aG vboxusers "$USER"
 
 postgresql-setup --initdb --unit postgresql
 systemctl enable --now cockpit.socket
