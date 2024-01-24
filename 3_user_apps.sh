@@ -99,8 +99,6 @@ mv marksman-linux-x64 marksman
 chmod +x marksman
 mv marksman "$HOME/.local/bin/"
 
-#jgmenu_run init --theme=archlabs_1803
-
 sleep 5
 
 reboot
