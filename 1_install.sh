@@ -176,8 +176,8 @@ PAQUETES=(
     #### Diseño ####
     'gimp'
     'inkscape'
-    #'krita'
-    #'blender'
+    'krita'
+    'blender'
 
     #### DEV ####
     'clang'
@@ -185,8 +185,6 @@ PAQUETES=(
     'cmake'
     'meson'
     'pipenv'
-    #'python3-spyder'
-    #'rstudio-desktop'
     'python3-pip'
     'filezilla'
     'sbcl'
@@ -236,8 +234,6 @@ PAQUETES=(
     'ebtables-services'
     'bridge-utils'
     'libguestfs'
-    #'VirtualBox'
-    #'virtualbox-guest-additions'
 )
  
 for PAQ in "${PAQUETES[@]}"; do
@@ -280,7 +276,6 @@ sed -i "s/Icon=\/var\/lib\/AccountsService\/icons\/$USER/Icon=\/usr\/share\/back
 
 usermod -aG libvirt "$USER"
 usermod -aG kvm "$USER"
-#usermod -aG vboxusers "$USER"
 
 postgresql-setup --initdb --unit postgresql
 systemctl enable --now cockpit.socket
