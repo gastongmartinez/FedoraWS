@@ -14,11 +14,13 @@ if [ -z "$DISPLAY" ]; then
 fi
 
 ############################################# Tema WhiteSur #################################################################################
-git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
+git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth=1
 cd WhiteSur-gtk-theme || return
 ./install.sh -l -i fedora -N glassy
 ./tweaks.sh -f
+./tweaks.sh -F
 sudo ./tweaks.sh -g -b "/usr/share/backgrounds/wallpapers/Landscapes/landscapes 01.jpg"
+sudo flatpak override --filesystem=xdg-config/gtk-4.0
 cd ..
 
 git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git
