@@ -150,7 +150,6 @@ PAQUETES=(
     'stacer'
     'timeshift'
     'setroubleshoot'
-    'gettext'
 
     #### Multimedia ####
     'vlc'
@@ -181,7 +180,6 @@ PAQUETES=(
     'clang-tools-extra'
     'cmake'
     'meson'
-    'pipenv'
     'python3-pip'
     'filezilla'
     'sbcl'
@@ -213,7 +211,6 @@ PAQUETES=(
     'postgis-client'
     'postgis-utils'
     'community-mysql-server'
-    'sqlite'
     'sqlite-analyzer'
     'sqlite-tools'
     'sqlitebrowser'
