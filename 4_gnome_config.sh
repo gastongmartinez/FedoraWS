@@ -112,11 +112,6 @@ dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/cus
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
 #############################################################################################################################################
 
-#############################################################################################################################################
-flatpak --user override --filesystem="$HOME"/.themes
-flatpak --user override --env=GTK_THEME=WhiteSur-Dark
-#############################################################################################################################################
-
 sleep 5
 
 reboot
