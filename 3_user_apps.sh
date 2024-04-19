@@ -94,6 +94,8 @@ mv marksman-linux-x64 marksman
 chmod +x marksman
 mv marksman "$HOME/.local/bin/"
 cargo install atuin
+cargo install --locked zellij
+
 
 sleep 5
 
