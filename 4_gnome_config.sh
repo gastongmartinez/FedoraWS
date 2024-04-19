@@ -82,7 +82,7 @@ dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
 dconf write /org/gnome/desktop/interface/gtk-theme "'WhiteSur-Dark'"
 dconf write /org/gnome/shell/extensions/user-theme/name "'WhiteSur-Dark'"
 dconf write /org/gnome/desktop/interface/cursor-theme "'WhiteSur-cursors'"
-dconf write /org/gnome/desktop/interface/icon-theme "'WhiteSur-grey-dark'"
+dconf write /org/gnome/desktop/interface/icon-theme "'WhiteSur-grey'"
 
 # Wallpaper
 dconf write /org/gnome/desktop/background/picture-uri "'file:///usr/share/backgrounds/wallpapers/Landscapes/landscapes%2001.jpg'"
