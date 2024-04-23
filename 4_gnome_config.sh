@@ -67,6 +67,7 @@ dconf write /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size 32
 dconf write /org/gnome/shell/extensions/dash-to-dock/show-apps-at-top true
 dconf write /org/gnome/shell/extensions/dash-to-dock/apply-custom-theme true
 dconf write /org/gnome/shell/extensions/blur-my-shell/dash-to-dock/blur false
+dconf write /org/gnome/shell/extensions/dash-to-dock/require-pressure-to-show false
 
 dconf write /org/gnome/shell/disable-user-extensions false
 #############################################################################################################################################
