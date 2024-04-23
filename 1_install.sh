@@ -284,6 +284,9 @@ if [[ $FST =~ ^[Ss]$ ]]; then
     sed -i 's/subvol=@/compress=zstd,noatime,space_cache=v2,ssd,discard=async,subvol=@/g' "/etc/fstab"
 fi
 
+cd /usr/bin || return
+ln -s lldb-dap lldb-vscode
+
 sleep 2
 
 reboot
