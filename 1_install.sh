@@ -272,6 +272,8 @@ usermod -aG libvirt "$USER"
 usermod -aG kvm "$USER"
 
 postgresql-setup --initdb --unit postgresql
+systemctl enable --now mysqld
+mysql_secure_installation
 systemctl enable --now cockpit.socket
 firewall-cmd --add-service=cockpit
 firewall-cmd --add-service=cockpit --permanent
