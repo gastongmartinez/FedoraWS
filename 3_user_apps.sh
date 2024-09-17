@@ -96,7 +96,7 @@ mv marksman "$HOME/.local/bin/"
 cargo install atuin
 cargo install --locked zellij
 
-
+sudo mysql_secure_installation
 sleep 5
 
 reboot
