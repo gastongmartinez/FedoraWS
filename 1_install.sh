@@ -191,6 +191,11 @@ PAQUETES=(
     'yarnpkg'
     'lazygit'
     'pcre-cpp'
+    'httpd'
+    'php'
+    'php-common'
+    'php-gd'
+    'php-mysqlnd'
 
     #### Fuentes ####
     'terminus-fonts'
@@ -274,8 +279,10 @@ usermod -aG kvm "$USER"
 postgresql-setup --initdb --unit postgresql
 systemctl enable --now mysqld
 systemctl enable --now cockpit.socket
-firewall-cmd --add-service=cockpit
+systemctl enable --now httpd.service
 firewall-cmd --add-service=cockpit --permanent
+firewall-cmd --add-service=http --permanent
+firewall-cmd --add-service=https --permanent
 
 alternatives --set java /usr/lib/jvm/java-17-amazon-corretto/bin/java
 alternatives --set javac /usr/lib/jvm/java-17-amazon-corretto/bin/javac
