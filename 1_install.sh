@@ -66,7 +66,6 @@ sh -c 'echo -e "[google-chrome]\nname=google-chrome\nbaseurl=https://dl.google.c
 
 # CORP
 dnf copr enable atim/lazygit -y
-dnf copr enable varlad/helix -y
 
 dnf update -y
 
