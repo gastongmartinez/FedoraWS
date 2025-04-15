@@ -38,7 +38,7 @@ dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-"$(
 dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-"$(rpm -E %fedora)".noarch.rpm -y
 
 # PGAdmin4
-rpm -i https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-fedora-repo-2-1.noarch.rpm
+# rpm -i https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-fedora-repo-2-1.noarch.rpm
 
 # MESA
 read -rp "Cambiar drivers de video a MESA Freeworld? (S/N): " MESA
@@ -214,7 +214,7 @@ PAQUETES=(
 
     ### Bases de datos ###
     'postgresql-server'
-    'pgadmin4'
+    #'pgadmin4'
     'postgis'
     'postgis-client'
     'postgis-utils'
@@ -243,7 +243,7 @@ for PAQ in "${PAQUETES[@]}"; do
 done
 
 rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
-wget https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-8.0.40-1.fc41.x86_64.rpm
+# wget https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-8.0.40-1.fc41.x86_64.rpm
 wget https://corretto.aws/downloads/latest/amazon-corretto-17-x64-linux-jdk.rpm
 wget https://corretto.aws/downloads/latest/amazon-corretto-21-x64-linux-jdk.rpm
 dnf install mysql-workbench-community-8.0.40-1.fc41.x86_64.rpm -y
